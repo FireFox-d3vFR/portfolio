@@ -1,0 +1,18 @@
+# Dépendances et fichiers générés
+node_modules/
+dist/
+.astro/
+.vercel/
+coverage/
+*.log
+
+# Configuration locale et secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Fichiers du système
+.DS_Store
+Thumbs.db
+Desktop.ini
