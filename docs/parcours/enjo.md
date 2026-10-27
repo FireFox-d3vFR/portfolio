@@ -5,7 +5,7 @@ Période : mars 2026.
 Cadre : hackathon collectif au KCGI, à Kyoto, au Japon.  
 Statut : concept produit présenté au jury ; aucune application développée.  
 Résultat déclaré : deuxième sur neuf équipes.  
-Dernière mise à jour : 17 octobre 2026.
+Dernière mise à jour : 27 octobre 2026.
 
 Synthèse des informations fournies par Jonathan. Le PowerPoint et le classement n’ont pas été vérifiés indépendamment pendant le cadrage.
 
@@ -84,3 +84,8 @@ La langue de travail, la composition internationale précise de l’équipe et l
 - Lien « Voir la présentation » envisageable si un support partageable est disponible.
 - Aucune démonstration applicative ou stack développée à suggérer.
 - Disponibilité publique, droits de partage des visuels et référence du classement à préciser avant publication.
+
+
+## Supports fournis le 27 octobre 2026
+
+Jonathan fournit le PDF exporté du PowerPoint et deux mises en situation publicitaires. Document intégré dans public/assets/pdf/enjo-presentation.pdf ; galerie dans public/assets/projects/enjo/. Couverture et page illustrant le parcours rendues en PNG depuis le PDF. Planche graphique fondée sur les couleurs et les polices effectivement relevées, avec distinction entre maquettes du concept et application fonctionnelle. Le classement reste déclaré par Jonathan et ne fait pas l’objet d’une vérification indépendante à partir de ce document.

@@ -5,7 +5,7 @@ Organisation : Association Mions Tir à l’Arc.
 Période : depuis mai 2022.  
 Plateforme : Wix.  
 Statut déclaré : site public utilisé par l’association, évolutions et maintenance en cours.  
-Dernière mise à jour : 17 octobre 2026.
+Dernière mise à jour : 27 octobre 2026.
 
 Synthèse des informations fournies par Jonathan. Aucun audit du site effectué pendant le cadrage.
 
@@ -70,3 +70,8 @@ Le site continue d’évoluer ; ce n’est pas un projet figé. Aucun gain chiff
 ## Résumé éditorial de travail
 
 Depuis mai 2022, gestion et évolution du site de l’Association Mions Tir à l’Arc sous Wix. Reprise d’un site existant, refonte progressive du design, de la structure et de la navigation pour faciliter l’accès aux informations du club et rendre le contact plus direct.
+
+
+## Supports publics (27 octobre 2026)
+
+Consultation du site public et captures de l’accueil, de la présentation du club et de la page d’adhésion. Polices vérifiées dans les styles calculés : Rubik pour les titres, Quicksand pour les textes. Couleurs confirmées par Jonathan : #016C11, #170092, #EDC101, #242323. Planche de synthèse et captures dans public/assets/projects/amtta/. Cette collecte de supports ne constitue pas un audit complet du site et ne modifie pas la contribution documentée.

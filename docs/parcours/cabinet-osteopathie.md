@@ -5,7 +5,7 @@ Période : 2026.
 Destinataires : cabinet de deux praticiennes.
 Désignation publique validée le 27 octobre 2026 : Cabinet d’ostéopathie en Chartreuse (désignation descriptive).  
 Statut : réalisation avancée, en cours de finalisation ; première livraison non encore confirmée.  
-Dernière mise à jour : 17 octobre 2026.
+Dernière mise à jour : 27 octobre 2026.
 
 Synthèse du témoignage de Jonathan. Aucun site, code ou support visuel examiné pendant le cadrage. Le statut rémunéré ou bénévole de l’intervention n’a pas été précisé.
 
@@ -80,3 +80,8 @@ Ne pas présenter le site comme définitivement livré ou maintenu en production
 ## Résumé éditorial de travail
 
 Conception et intégration d’un site vitrine pour deux praticiennes, avec WordPress/Gutenberg et du HTML/CSS personnalisé. Travail sur la hiérarchie des informations, le design responsive et les composants visuels, avec des étapes de maquettage et des ajustements issus des échanges avec les praticiennes. Projet en cours de finalisation.
+
+
+## Supports de la version de travail (27 octobre 2026)
+
+Jonathan donne accès à l’aperçu WordPress protégé. Consultation des trois pages Accueil, L’ostéopathie et L’équipe, sans intervention sur le site ni sur ses réglages. Captures cadrées sans barre d’administration et planche graphique disponibles dans public/assets/projects/osteo/. Polices observées : Spectral et Rethink Sans. Couleurs principales relevées : #4DACB0, #297D80, #607B80, #D7ECEC, #FAFAFB, #2E3436. Statut de finalisation conservé, aucun lien vers le staging ajouté au portfolio et aucun PDF nécessaire à ce stade.

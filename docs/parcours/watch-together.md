@@ -3,10 +3,10 @@
 Catégorie : expériences académiques.  
 Période : 2026.  
 Cadre : hackathon collectif à l’ESTIAM.  
-Statut : prototype fonctionnel historiquement déployé ; démonstration en ligne arrêtée.  
-Dernière mise à jour : 17 octobre 2026.
+Statut : prototype fonctionnel historiquement déployé ; déploiement Railway arrêté, version relancée localement en octobre 2026.  
+Dernière mise à jour : 27 octobre 2026.
 
-Synthèse des échanges de cadrage, fondée sur le témoignage de Jonathan. Aucun code ni fonctionnement actuel vérifié.
+Synthèse des échanges de cadrage, fondée sur le témoignage de Jonathan. Le 27 octobre 2026, lecture ciblée des styles du clone local et contrôle navigateur de l’accueil et de l’accès à un salon existant. Cette vérification n’est pas un audit complet de l’application ni un test de synchronisation entre plusieurs clients.
 
 ## Contexte et objectif
 
@@ -84,3 +84,8 @@ La stack vidéo et applicative décrit le projet collectif ; la contribution ind
 ## Points ouverts
 
 Durée, taille de l’équipe, dépôts précis, supports visuels, détail du périmètre Terraform et difficulté technique individuelle plus précise. Ces détails ne bloquent pas une présentation synthétique fidèle au travail déclaré.
+
+
+## Supports de la relance locale
+
+Trois captures fournies par Jonathan : accueil, salon sans flux et lecteur avec vidéo. Une planche des repères graphiques actuels reprend les valeurs de front/src/index.css : fond #0A0A0A, surface #111111, accent #00E676, texte clair #E2E8F0 et JetBrains Mono déclarée dans front/index.html. Galerie publique dans public/assets/projects/anthlabs/. Présentation PDF fournie et reliée dans la modale : public/assets/pdf/anthlabs-presentation.pdf. Le prototype n’a pas été modifié pendant cette collecte.

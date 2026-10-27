@@ -82,7 +82,7 @@ const { media, id } = Astro.props;
           </svg>
         </div>
         <p class="mt-5 font-mono text-xs uppercase tracking-[0.12em] text-primary">
-          Document PDF · démonstration
+          Document PDF{media.pdf.demo && ' · démonstration'}
         </p>
         <h4 class="mt-3 text-xl font-medium">{media.pdf.title}</h4>
         <p class="mt-3 text-sm leading-relaxed text-muted-foreground">{media.pdf.note}</p>

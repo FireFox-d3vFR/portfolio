@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+<title>Repères graphiques du prototype Watch Room</title>
+<desc>Synthèse des couleurs et de la typographie relevées dans le code du prototype AnthLabs relancé localement.</desc>
+<rect width="1440" height="900" fill="#0a0a0a"/>
+<g font-family="'JetBrains Mono',Consolas,monospace">
+<text x="80" y="88" font-size="16" letter-spacing="3" fill="#6b7280">ANTHLABS / WATCH TOGETHER</text>
+<text x="80" y="168" font-size="58" font-weight="500" fill="#00e676">watch<tspan fill="#e2e8f0">_room</tspan><tspan fill="#00e676">|</tspan></text>
+<text x="80" y="215" font-size="20" fill="#e2e8f0">Repères graphiques du prototype actuel</text>
+<text x="80" y="252" font-size="15" fill="#6b7280">Synthèse issue du code, sans refonte de l’identité.</text>
+<g transform="translate(80 310)">
+<rect width="232" height="150" rx="3" fill="#0a0a0a" stroke="#2a2a2a"/><text y="186" fill="#e2e8f0" font-size="17">Fond / #0A0A0A</text>
+<rect x="262" width="232" height="150" rx="3" fill="#111111" stroke="#2a2a2a"/><text x="262" y="186" fill="#e2e8f0" font-size="17">Surface / #111111</text>
+<rect x="524" width="232" height="150" rx="3" fill="#00e676"/><text x="524" y="186" fill="#e2e8f0" font-size="17">Accent / #00E676</text>
+<rect x="786" width="232" height="150" rx="3" fill="#e2e8f0"/><text x="786" y="186" fill="#e2e8f0" font-size="17">Texte / #E2E8F0</text>
+<rect x="1048" width="152" height="150" rx="3" fill="#6b7280"/><text x="1048" y="186" fill="#e2e8f0" font-size="17">#6B7280</text>
+</g>
+<line x1="80" y1="560" x2="1360" y2="560" stroke="#2a2a2a"/>
+<text x="80" y="610" fill="#6b7280" font-size="14" letter-spacing="2">TYPOGRAPHIE</text>
+<text x="80" y="661" fill="#e2e8f0" font-size="32">JetBrains Mono</text>
+<text x="80" y="703" fill="#6b7280" font-size="17">Titres, boutons et repères techniques.</text>
+<text x="80" y="741" fill="#6b7280" font-size="17">Graisses déclarées : 300, 400, 500.</text>
+<text x="770" y="610" fill="#6b7280" font-size="14" letter-spacing="2">COMPOSANTS</text>
+<rect x="770" y="638" width="330" height="54" rx="2" fill="none" stroke="#00e676"/>
+<text x="935" y="672" text-anchor="middle" fill="#00e676" font-size="17">+ créer un salon</text>
+<line x1="770" y1="742" x2="1220" y2="742" stroke="#2a2a2a" stroke-width="4"/>
+<circle cx="870" cy="742" r="8" fill="#00e676"/>
+<text x="80" y="840" fill="#6b7280" font-size="15">Fond sombre · accent vert · contours fins · angles discrets · vocabulaire de terminal</text>
+</g></svg>

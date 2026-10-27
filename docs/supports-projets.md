@@ -10,7 +10,7 @@ Les supports sont configurés par identifiant dans `src/data/projects/media.ts` 
 
 Déposer les images partageables dans `public/assets/projects/`, idéalement dans un sous-dossier par projet. Pour chaque image, renseigner `src` (chemin public commençant par `/assets/projects/`), `alt` et `caption`. Les images sont affichées en entier, sans recadrage dans l’aperçu principal. Plusieurs formats d’image sont possibles ; les SVG actuels sont uniquement des compositions abstraites temporaires.
 
-Déposer les présentations dans `public/assets/pdf/`. Dans la propriété facultative `pdf`, remplacer `href`, `title`, `label` et `note`. Les deux hackathons utilisent actuellement le CV comme PDF de démonstration, explicitement identifié : il ne constitue pas leur présentation. Exemple de chemin futur : `/assets/pdf/anthlabs-presentation.pdf`.
+Déposer les présentations dans `public/assets/pdf/`. Dans la propriété facultative `pdf`, remplacer `href`, `title`, `label` et `note`. AnthLabs utilise sa présentation réelle dans `/assets/pdf/anthlabs-presentation.pdf`. Enjo utilise sa présentation réelle dans `/assets/pdf/enjo-presentation.pdf`. Aucun projet ne pointe désormais vers le CV comme présentation de démonstration. Exemple de chemin futur : `/assets/pdf/anthlabs-presentation.pdf`.
 
 L’onglet PDF présente une carte avec le titre du document, une note et un bouton d’ouverture dans un nouvel onglet. Aucun lecteur PDF n’est intégré dans la modale et aucun téléchargement n’est forcé pour les présentations.
 
@@ -37,3 +37,6 @@ Comparaison avec les cinq fiches `docs/parcours/` :
 Les synthèses existantes sont fidèles et ont été conservées. Les fiches restent plus détaillées que les modales. Les liens externes communiqués n’ont pas fait l’objet d’un nouvel audit de disponibilité pendant cette modification.
 
 Ordre de présentation commun aux vues grille et liste : Orange, AMTTA, cabinet d’ostéopathie, portfolio, AnthLabs, Enjo. Le portfolio dispose d’une capture de travail et d’une planche de couleurs, sans PDF. La chronologie du parcours reste indépendante de cet ordre éditorial.
+
+
+Les planches de repères graphiques sont conservées comme principe pour les prochains projets : elles doivent reprendre les couleurs et typographies réellement utilisées, et être distinguées des captures de l’interface.

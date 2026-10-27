@@ -2,16 +2,16 @@
 
 ## Ce qui est déjà disponible
 
-Le CV et les logos des projets sont présents. Le portfolio possède de vraies captures et une palette. Les images des quatre autres projets restent des compositions de démonstration ; les PDF AnthLabs et Enjo utilisent encore le CV comme exemple clairement signalé.
+Le CV et les logos des projets sont présents. Le portfolio possède de vraies captures et une palette. AnthLabs dispose maintenant de trois captures réelles et d’une planche graphique issue du code actuel. AMTTA dispose de trois captures du site public et de sa planche graphique. Ostéo Chartreuse dispose de trois captures de l’aperçu de travail et de sa planche graphique. Enjo dispose de son PDF de pitch, de deux mises en situation et d’une planche graphique. Les PDF de démonstration ont été remplacés par les présentations réelles.
 
 ## Liste par projet
 
 | Projet | À fournir en priorité | Compléments utiles | Emplacement conseillé |
 | --- | --- | --- | --- |
-| AnthLabs / Watch Together | PDF de la présentation du hackathon ; 2 à 4 captures du prototype, si disponibles | Capture des workflows ou schéma d’infrastructure partageable ; lien du dépôt précis | `public/assets/projects/anthlabs/`, PDF `public/assets/pdf/anthlabs-presentation.pdf` |
-| Enjo | PDF du pitch ; 2 à 4 visuels de la présentation ou des maquettes du concept | Photo d’équipe ou du hackathon partageable ; lien public éventuel | `public/assets/projects/enjo/`, PDF `public/assets/pdf/enjo-presentation.pdf` |
-| AMTTA | 2 à 4 captures du site, par exemple accueil, informations pratiques, mobile | Palette, évolution avant/après si tu disposes des deux versions | `public/assets/projects/amtta/` |
-| Ostéo Chartreuse | 2 à 4 captures de la version à présenter, desktop et mobile | Palette finale, nom confirmé avec les praticiennes et URL lorsque le site sera prêt | `public/assets/projects/osteo/` |
+| AnthLabs / Watch Together | Captures et présentation PDF disponibles | Capture des workflows ou schéma d’infrastructure partageable ; lien du dépôt précis | `public/assets/projects/anthlabs/`, PDF `public/assets/pdf/anthlabs-presentation.pdf` |
+| Enjo | Présentation PDF et visuels du concept disponibles | Photo d’équipe ou du hackathon partageable ; lien public éventuel | `public/assets/projects/enjo/`, PDF `public/assets/pdf/enjo-presentation.pdf` |
+| AMTTA | Captures et repères graphiques disponibles | Évolution avant/après si tu disposes des deux versions ; capture mobile éventuelle | `public/assets/projects/amtta/` |
+| Ostéo Chartreuse | Captures de travail et repères graphiques disponibles | Visuels finaux validés, nom confirmé avec les praticiennes et URL publique lorsque le site sera prêt | `public/assets/projects/osteo/` |
 | Orange | Aucun support attendu tant que l’autorisation n’est pas confirmée | Si autorisé : nom du projet et captures explicitement partageables ; sinon la fiche textuelle suffit | Prévoir `public/assets/projects/orange/` uniquement au moment de l’ajout |
 | Portfolio | Rien de bloquant | Nouvelles captures après validation de l’identité ; URL publique après déploiement | `public/assets/projects/portfolio/` existe déjà |
 

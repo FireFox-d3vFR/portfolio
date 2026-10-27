@@ -38,7 +38,7 @@ export const projects: Project[] = [
     title: 'AnthLabs · Visionnage synchronisé',
     category: 'Hackathon ESTIAM',
     period: 'Juillet 2026',
-    status: 'Prototype collectif · démonstration arrêtée',
+    status: 'Prototype collectif · relancé localement',
     summary:
       'Assembler et déployer une application permettant de regarder une vidéo ensemble, à distance.',
     technologies: ['Terraform', 'GitHub Actions', 'Docker', 'Railway'],

@@ -1333,6 +1333,7 @@ html::-webkit-scrollbar-thumb:hover,
 }
 .support-thumbnails {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .support-thumbnails button {
