@@ -1,13 +1,16 @@
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 export interface ProjectMedia {
   description?: string;
   link?: { href: string; label: string };
   imageNote?: string;
-  images: { src: string; alt: string; caption: string }[];
+  images: { src: string; thumbnail?: string; alt: string; caption: string }[];
   pdf?: { href: string; title: string; label: string; note: string; demo?: boolean };
 }
 
 // Supports réels des projets ; les visuels Enjo sont des maquettes du concept.
-export const projectMedia: Record<string, ProjectMedia> = {
+const sourceMedia: Record<string, ProjectMedia> = {
   portfolio: {
     link: { href: '/identite/', label: 'Explorer l’identité visuelle' },
     description: 'Aperçus de la version de travail du portfolio.',
@@ -16,7 +19,7 @@ export const projectMedia: Record<string, ProjectMedia> = {
     images: [
       {
         src: '/assets/projects/portfolio/hero.png',
-        alt: 'Capture du Hero du portfolio : présentation de Jonathan et renard géométrique sur fond automnal',
+        alt: 'Capture du Hero du portfolio : présentation et renard géométrique sur fond automnal',
         caption: 'Hero du portfolio, version en cours',
       },
       {
@@ -157,3 +160,43 @@ export const projectMedia: Record<string, ProjectMedia> = {
     ],
   },
 };
+
+// Les images matricielles sont locales et optimisées une seule fois à la compilation.
+// Les planches SVG restent vectorielles, sans transformation de leurs polices.
+const sources = import.meta.glob<ImageMetadata>('../../assets/projects/**/*.png', {
+  eager: true,
+  import: 'default',
+});
+export const projectMedia: Record<string, ProjectMedia> = Object.fromEntries(
+  await Promise.all(
+    Object.entries(sourceMedia).map(async ([id, media]) => [
+      id,
+      {
+        ...media,
+        images: await Promise.all(
+          media.images.map(async (image) => {
+            if (image.src.endsWith('.svg')) return image;
+            const source =
+              sources[image.src.replace('/assets/projects/', '../../assets/projects/')];
+            if (!source) throw new Error('Support introuvable : ' + image.src);
+            const [preview, thumbnail] = await Promise.all([
+              getImage({
+                src: source,
+                width: Math.min(1440, source.width),
+                format: 'webp',
+                quality: 85,
+              }),
+              getImage({
+                src: source,
+                width: Math.min(160, source.width),
+                format: 'webp',
+                quality: 75,
+              }),
+            ]);
+            return { ...image, src: preview.src, thumbnail: thumbnail.src };
+          }),
+        ),
+      },
+    ]),
+  ),
+);

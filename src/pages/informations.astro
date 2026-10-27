@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import IdentityNavigation from '../components/navigation/IdentityNavigation.astro';
+import BackToTop from '../components/navigation/BackToTop.astro';
+import { contact } from '../data/site';
+const deployedOnVercel = import.meta.env.VERCEL === '1';
+---
+
+<Layout
+  title="Informations du site — Jonathan Maquenhem"
+  description="Édition, hébergement, préférences d’affichage et crédits de mon portfolio personnel."
+>
+  <IdentityNavigation />
+  <main id="contenu" tabindex="-1" class="mx-auto max-w-3xl px-5 pt-32 pb-20">
+    <p class="font-mono text-xs uppercase tracking-widest text-primary">À propos du site</p>
+    <h1 class="mt-4 text-4xl font-medium md:text-5xl">Informations du site</h1>
+    <div class="mt-10 space-y-9 text-sm leading-relaxed text-muted-foreground">
+      <section>
+        <h2 class="mb-3 text-2xl text-foreground">Édition et contact</h2>
+        <p>
+          Je suis Jonathan Maquenhem, créateur et responsable de publication de ce portfolio
+          personnel. J’y présente mon parcours, mes contributions et mes projets. Ce site ne propose
+          ni vente ni paiement.
+        </p>
+        <p class="mt-3">
+          Pour une question sur le site ou une demande concernant les contenus et les échanges par
+          email :{' '}
+          <a class="underline underline-offset-4" href={'mailto:' + contact.email}>
+            {contact.email}
+          </a>
+          .
+        </p>
+      </section>
+      <section>
+        <h2 class="mb-3 text-2xl text-foreground">Hébergement</h2>
+        {deployedOnVercel ? (
+          <>
+            <p>
+              Ce site est hébergé par Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723,
+              États-Unis.
+            </p>
+            <p class="mt-3">
+              <a
+                class="underline underline-offset-4"
+                href="https://vercel.com/legal/privacy-notice"
+              >
+                Informations de Vercel sur la confidentialité
+              </a>
+            </p>
+          </>
+        ) : (
+          <p>
+            Cette version est une prévisualisation. L’hébergement prévu pour la version publique est
+            Vercel ; les informations de l’hébergeur seront affichées lors de ce déploiement.
+          </p>
+        )}
+      </section>
+      <section>
+        <h2 class="mb-3 text-2xl text-foreground">Préférences et confidentialité</h2>
+        <p>
+          Le site n’intègre ni publicité, ni outil de mesure d’audience, ni formulaire de contact.
+          Les polices et les illustrations sont servies avec le site.
+        </p>
+        <p class="mt-3">
+          Le navigateur mémorise uniquement vos choix de saison, de mode clair ou sombre et de vue
+          des projets dans son stockage local. Ces préférences restent sur votre appareil ; aucun
+          compte n’est créé. Vous pouvez les modifier dans les préférences ou les effacer depuis les
+          données de site de votre navigateur.
+        </p>
+        <p class="mt-3">
+          Les liens de contact ouvrent votre messagerie ou un service externe. Si vous m’écrivez,
+          j’utilise les informations de votre message pour vous répondre. L’hébergeur peut traiter
+          les données techniques nécessaires à la livraison et à la sécurité du site, notamment
+          l’adresse IP ; ses informations figurent ci-dessus.
+        </p>
+      </section>
+      <section>
+        <h2 class="mb-3 text-2xl text-foreground">Visuels et crédits</h2>
+        <p>
+          Les logos, captures et présentations des projets servent à illustrer mon travail et mes
+          contributions. Leurs marques et contenus restent associés à leurs auteurs et organismes
+          respectifs. Les maquettes Enjo présentent un concept imaginé en équipe, sans application
+          publiée.
+        </p>
+        <p class="mt-3">
+          L’univers du renard a été travaillé à partir de mes inspirations et dessins, avec l’aide
+          d’outils de génération d’images. Certaines illustrations des projets présentés restent
+          provisoires.
+        </p>
+        <p class="mt-3">
+          Les polices Fraunces, Manrope et JetBrains Mono sont distribuées sous licence SIL Open
+          Font License. Les pictogrammes de technologies proviennent de Simple Icons ou de dessins
+          intégrés au site.
+        </p>
+        <p class="mt-3">
+          <a class="underline underline-offset-4" href="/identite/">
+            Découvrir mon identité visuelle
+          </a>
+        </p>
+      </section>
+    </div>
+  </main>
+  <BackToTop href="#contenu" />
+</Layout>
+<script>
+  import '../scripts/portfolio';
+</script>

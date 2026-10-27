@@ -21,11 +21,17 @@ const favicons = await Promise.all(
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 const {
+  noindex = false,
   title = 'Jonathan Maquenhem — Développeur Full Stack',
   description = 'Développeur Full Stack, curieux des besoins métier, du DevOps et de l’intégration. Découvrez mon parcours et mes contributions.',
 } = Astro.props;
+const canonical = Astro.site && !noindex ? new URL(Astro.url.pathname, Astro.site) : undefined;
+const shareImage = Astro.site ? new URL('/partage.png', Astro.site) : undefined;
+// Une prévisualisation ne doit pas concurrencer le site public dans les moteurs.
+const preventIndexing = noindex || !Astro.site || import.meta.env.VERCEL_ENV === 'preview';
 ---
 
 <!doctype html>
@@ -38,6 +44,21 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Jonathan Maquenhem" />
+    {preventIndexing && <meta name="robots" content="noindex, follow" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    {canonical && <meta property="og:url" content={canonical} />}
+    {shareImage && <meta property="og:image" content={shareImage} />}
+    {shareImage && <meta property="og:image:width" content="1200" />}
+    {shareImage && <meta property="og:image:height" content="630" />}
+    {shareImage && (
+      <meta
+        property="og:image:alt"
+        content="Jonathan Maquenhem, développeur Full Stack. Symfony, Vue.js, DevOps et Cloud."
+      />
+    )}
+    <meta name="twitter:card" content="summary_large_image" />
     {favicons.map((icon) => (
       <link
         rel="icon"

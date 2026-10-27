@@ -12,3 +12,6 @@ Captures desktop 1440 × 1000, cadrées sous la barre d’administration WordPre
 Styles calculés : Spectral pour les titres ; Rethink Sans pour les textes. Sélection de variables personnalisées WordPress : turquoise #4DACB0, bleu profond #297D80, bleu ardoise #607B80, bleu brume #D7ECEC, fond #FAFAFB, texte #2E3436. La planche utilise aussi le bleu douceur #8BC6C9 et les neutres du site. Les polices ne sont pas embarquées dans le SVG ; leurs noms et rôles sont documentés avec des polices de secours pour le rendu. Logo existant du projet réutilisé.
 
 Pas de PDF ajouté et pas de lien public vers le staging protégé. La planche est une synthèse de la version observée, pas une charte livrée par les praticiennes.
+
+
+Depuis la préparation de publication, les images PNG originales sont conservées dans `src/assets/projects/osteo/`. Astro génère leurs aperçus WebP et leurs miniatures. Les planches SVG restent dans le présent dossier public.

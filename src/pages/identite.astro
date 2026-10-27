@@ -1,4 +1,5 @@
 ---
+import SiteInformationLink from '../components/navigation/SiteInformationLink.astro';
 import FoxTracks from '../components/identity/FoxTracks.astro';
 import BackToTop from '../components/navigation/BackToTop.astro';
 import { Image } from 'astro:assets';
@@ -22,9 +23,12 @@ const colors = [
 ];
 ---
 
-<Layout title="Identité visuelle — Jonathan Maquenhem">
+<Layout
+  title="Identité visuelle — Jonathan Maquenhem"
+  description="Mon travail graphique autour du renard, des couleurs d’automne et des paysages polygonaux, décliné au fil des saisons."
+>
   <IdentityNavigation />
-  <main id="contenu" class="mx-auto max-w-6xl px-5 py-16">
+  <main id="contenu" tabindex="-1" class="mx-auto max-w-6xl px-5 py-16">
     <div class="identity-introduction">
       <div>
         <p class="mt-12 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
@@ -210,6 +214,7 @@ const colors = [
       </a>
     </section>
   </main>
+  <SiteInformationLink />
   <BackToTop href="#contenu" />
 </Layout>
 <script>

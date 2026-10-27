@@ -7,3 +7,6 @@
 Les six couleurs reprennent les variables OKLCH du thème par défaut dans `src/styles/portfolio.css`. Les codes hexadécimaux sont leurs équivalents sRGB arrondis. Le renard Facettes douces est celui du site. Fraunces, Manrope et JetBrains Mono sont intégrées dans la planche depuis les polices locales déjà installées, sans requête externe ; leurs licences sont regroupées dans `polices-LICENSE.txt`.
 
 Le lien de la modale vers `/identite/` complète cette synthèse avec les variantes et les saisons.
+
+
+Depuis la préparation de publication, les images PNG originales sont conservées dans `src/assets/projects/portfolio/`. Astro génère leurs aperçus WebP et leurs miniatures. Les planches SVG restent dans le présent dossier public.

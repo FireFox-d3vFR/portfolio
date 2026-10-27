@@ -1,8 +1,8 @@
-// Renseigner l’hébergement après confirmation de la mise en ligne.
+// Hébergement retenu pour la publication et les crédits du footer.
 export const footer = {
   repository: 'https://github.com/FireFox-d3vFR/portfolio',
   author: 'FireFox-d3vFR',
-  hosting: null as { label: string; href: string } | null,
+  hosting: { label: 'Vercel', href: 'https://vercel.com/' },
 };
 
 export const contact = {

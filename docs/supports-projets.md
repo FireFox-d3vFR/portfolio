@@ -40,3 +40,8 @@ Ordre de présentation commun aux vues grille et liste : Orange, AMTTA, cabinet 
 
 
 Les planches de repères graphiques sont conservées comme principe pour les prochains projets : elles doivent reprendre les couleurs et typographies réellement utilisées, et être distinguées des captures de l’interface.
+
+
+## Images optimisées pour la publication
+
+Les captures et maquettes PNG sources sont désormais dans `src/assets/projects/<projet>/`. Les anciens chemins PNG sous `public/assets/projects/` ne sont plus des URL publiques : Astro produit des WebP et miniatures hachés pendant la compilation. Les planches SVG restent dans `public/assets/projects/<projet>/` et les PDF dans `public/assets/pdf/`. Voir [la préparation de publication](publication-statique.md).

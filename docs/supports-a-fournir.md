@@ -32,3 +32,8 @@ Images : PNG pour les captures nettes, JPEG/WebP pour les photos. Une largeur de
 Déposer les fichiers dans le dossier du projet puis renseigner `src/data/projects/media.ts` : `src`, `alt`, `caption`, et éventuellement `pdf`. Les chemins publics commencent par `/assets/`, sans le préfixe `public/`. Les noms de dossiers `anthlabs`, `enjo`, `amtta`, `osteo` et `portfolio` restent stables.
 
 Pour remplacer les démonstrations, ajuster aussi `description`, `imageNote`, le titre et le libellé PDF. Retirer la référence au CV de démonstration du projet une fois sa vraie présentation ajoutée. Aucun PDF n’est nécessaire pour un projet qui n’en possède pas. Les détails techniques sont décrits dans [Supports des projets](supports-projets.md).
+
+
+## Images optimisées pour la publication
+
+Les captures et maquettes PNG sources sont désormais dans `src/assets/projects/<projet>/`. Les anciens chemins PNG sous `public/assets/projects/` ne sont plus des URL publiques : Astro produit des WebP et miniatures hachés pendant la compilation. Les planches SVG restent dans `public/assets/projects/<projet>/` et les PDF dans `public/assets/pdf/`. Voir [la préparation de publication](publication-statique.md).

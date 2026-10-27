@@ -8,3 +8,6 @@ Captures fournies par Jonathan le 27 octobre 2026, retenues dans leur définitio
 - `reperes-graphiques.svg` : synthèse créée pour le portfolio à partir de `front/src/index.css` et `front/index.html` du clone local ; couleurs et famille de caractères effectivement déclarées. Ce n’est pas une charte historique fournie par l’équipe.
 
 Les trois PNG sont des captures réelles, sans retouche. Les contrôles de lecture du salon partagé n’ont pas été actionnés pendant la vérification. La présentation PDF fournie par Jonathan est disponible dans `public/assets/pdf/anthlabs-presentation.pdf` et remplace le CV de démonstration dans cette modale.
+
+
+Depuis la préparation de publication, les images PNG originales sont conservées dans `src/assets/projects/anthlabs/`. Astro génère leurs aperçus WebP et leurs miniatures. Les planches SVG restent dans le présent dossier public.

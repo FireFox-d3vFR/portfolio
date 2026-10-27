@@ -32,6 +32,7 @@ const { media, id } = Astro.props;
     <figure>
       <img
         data-support-image
+        decoding="async"
         src={media.images[0].src}
         alt={media.images[0].alt}
         width="800"
@@ -55,7 +56,14 @@ const { media, id } = Astro.props;
             aria-pressed={i === 0 ? 'true' : 'false'}
             aria-label={image.caption}
           >
-            <img src={image.src} alt="" width="800" height="500" loading="lazy" />
+            <img
+              src={image.thumbnail ?? image.src}
+              alt=""
+              width="160"
+              height="100"
+              loading="lazy"
+              decoding="async"
+            />
           </button>
         ))}
       </div>

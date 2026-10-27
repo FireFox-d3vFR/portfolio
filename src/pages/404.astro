@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import IdentityNavigation from '../components/navigation/IdentityNavigation.astro';
+import FoxLogo from '../components/identity/FoxLogo.astro';
+---
+
+<Layout title="Page introuvable — Jonathan Maquenhem" noindex>
+  <IdentityNavigation />
+  <main
+    id="contenu"
+    class="mx-auto flex min-h-screen max-w-2xl flex-col items-start justify-center px-5 py-28"
+  >
+    <FoxLogo class="mb-6 h-20 w-20 object-contain" />
+    <p class="font-mono text-sm text-primary">Erreur 404</p>
+    <h1 class="mt-4 text-4xl font-medium md:text-5xl">Cette piste s’arrête ici.</h1>
+    <p class="mt-5 text-muted-foreground">
+      La page demandée n’existe pas ou a été déplacée. Vous pouvez retrouver mes projets et mon
+      parcours depuis l’accueil.
+    </p>
+    <a
+      href="/"
+      class="mt-8 inline-flex rounded-full bg-ink px-6 py-3 font-semibold text-ink-foreground"
+    >
+      Revenir au portfolio
+    </a>
+  </main>
+</Layout>
+<script>
+  import '../scripts/portfolio';
+</script>

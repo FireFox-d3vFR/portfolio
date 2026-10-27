@@ -87,3 +87,8 @@ Placer le PDF dans public/assets/pdf/cv-jonathan-maquenhem.pdf. Le bouton « Mon
 ## Régler la disponibilité
 
 Dans src/data/identity/profile.ts, availabilityStatus accepte available, open ou unavailable. La page affiche le libellé et l’indicateur correspondants. Ce réglage est indépendant des préférences des visiteurs et des saisons. Les trois variantes peuvent être comparées sur /identite/.
+
+
+## Publication statique
+
+La configuration Vercel, la détection du domaine public et les vérifications restantes sont décrites dans [la préparation de publication](docs/publication-statique.md). Les captures originales des projets se trouvent dans `src/assets/projects/` ; Astro génère les aperçus WebP et les miniatures pendant le build.
