@@ -1,20 +1,32 @@
 ---
-import BackToTop from '../components/BackToTop.astro';
+import BackToTop from '../components/navigation/BackToTop.astro';
 import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Skills from '../components/Skills.astro';
-import Projects from '../components/Projects.astro';
-import Journey from '../components/Journey.astro';
-import Contact from '../components/Contact.astro';
-import EntryDetail from '../components/EntryDetail.astro';
-import { DETAIL_ENTRIES } from '../data/entries';
+import Navigation from '../components/navigation/Navigation.astro';
+import Hero from '../components/sections/Hero.astro';
+import About from '../components/sections/About.astro';
+import Skills from '../components/sections/Skills.astro';
+import Projects from '../components/sections/Projects.astro';
+import Journey from '../components/sections/Journey.astro';
+import Contact from '../components/sections/Contact.astro';
+import EntryDetail from '../components/projects/EntryDetail.astro';
+import { DETAIL_ENTRIES } from '../data/journey/entries';
 ---
+
 <Layout>
   <Navigation />
-  <main id="contenu"><Hero /><About /><Skills /><Projects /><Journey /><Contact /></main>
+  <main id="contenu">
+    <Hero />
+    <About />
+    <Skills />
+    <Projects />
+    <Journey />
+    <Contact />
+  </main>
   <BackToTop />
-  {DETAIL_ENTRIES.map(entry => <EntryDetail entry={entry} visual={!!entry.visual} />)}
+  {DETAIL_ENTRIES.map((entry) => (
+    <EntryDetail entry={entry} visual={!!entry.visual} />
+  ))}
 </Layout>
-<script>import '../scripts/portfolio';</script>
+<script>
+  import '../scripts/portfolio';
+</script>

@@ -4,7 +4,7 @@
 
 Jonathan préfère deux personnages entiers : le renard polygonal de Facettes douces et celui aux courbes lisses de Courbes et paysage. La troisième piste ne sera pas utilisée pour le Hero. Extraire uniquement les personnages, pas les paysages des planches.
 
-Les deux PNG transparents sont dans `src/assets/images/`, sous les noms `fox-facets.png` et `fox-curves.png`. La sélection dans `src/data/fox.ts` utilise actuellement `facets` pour le premier essai du Hero ; changer en `curves` pour comparer l’autre dans le même décor. Les proportions natives sont conservées. Les deux variantes sont également présentées sur la page identité.
+Les deux PNG transparents sont dans `src/assets/images/`, sous les noms `fox-facets.png` et `fox-curves.png`. La sélection dans `src/data/identity/fox.ts` utilise actuellement `facets` pour le premier essai du Hero ; changer en `curves` pour comparer l’autre dans le même décor. Les proportions natives sont conservées. Les deux variantes sont également présentées sur la page identité.
 
 Paysages saisonniers, feuilles, commande git et texte du Hero conservés. Aucun changement du monogramme jm., du logo de navigation ou du favicon.
 
@@ -27,7 +27,7 @@ Consigne Courbes et paysage : même extraction depuis la deuxième planche, en c
 
 Jonathan valide l’ajout des trois têtes seules, sans lettres jm. intégrées, avec Facettes douces comme référence par défaut. PNG alpha copiés dans `src/assets/brand/` : `fox-logo-facets.png`, `fox-logo-curves.png`, `fox-logo-line.png`.
 
-Sélection centralisée : `activeFoxLogo` dans `src/data/fox.ts`. Composant `FoxLogo.astro` partagé par la navigation, le footer et les aperçus de la page identité. WebP optimisés générés par Astro. Initiales jm. inchangées, Hero inchangé, favicon inchangé. Les trois logos sont conservés sur `/identite/#fox-logo-explorations`, avec grand aperçu et essais à 32 px sur fonds clair et sombre.
+Sélection centralisée : `activeFoxLogo` dans `src/data/identity/fox.ts`. Composant `FoxLogo.astro` partagé par la navigation, le footer et les aperçus de la page identité. WebP optimisés générés par Astro. Initiales jm. inchangées, Hero inchangé, favicon inchangé. Les trois logos sont conservés sur `/identite/#fox-logo-explorations`, avec grand aperçu et essais à 32 px sur fonds clair et sombre.
 
 Outil intégré imagegen, mode extraction/édition depuis chacune des planches. Consigne commune : isoler uniquement la tête en haut à droite, préserver son profil, ses couleurs et ses formes ; supprimer lettres jm., titres, séparateurs, paysage, personnage entier et carré favicon ; préserver les parties crème du pelage et rendre le pourtour transparent. La troisième extraction conserve son dessin illustré avec contour ; ce n’est pas encore le futur favicon en trait unique.
 

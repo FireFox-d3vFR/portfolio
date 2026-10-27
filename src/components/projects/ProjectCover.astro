@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+import { getProjectLogo, projectLogoNames } from '../../data/projects/logos';
+import ProjectArt from './ProjectArt.astro';
+interface Props {
+  id: string;
+  kind?: string;
+}
+const { id, kind } = Astro.props;
+const logo = getProjectLogo(id);
+const settings = projectLogoNames[id];
+const imageWidth = logo ? Math.min(480, logo.width) : 480;
+const imageWidths = logo
+  ? [...new Set([96, 160, 240, imageWidth])]
+      .filter((width) => width <= logo.width)
+      .sort((a, b) => a - b)
+  : [];
+---
+
+<div
+  class="project-cover"
+  aria-hidden="true"
+  style={{
+    '--logo-modal-scale': settings?.modalScale ?? 1,
+    '--logo-width': (settings?.gridWidth ?? 240) + 'px',
+    '--logo-height': (settings?.gridHeight ?? 144) + 'px',
+    '--logo-list-padding': (settings?.listPadding ?? 8) + 'px',
+    '--logo-mobile-padding': (settings?.mobilePadding ?? 4) + 'px',
+  }}
+>
+  {logo ? (
+    <div class="project-logo-frame">
+      <Image
+        src={logo}
+        alt=""
+        width={imageWidth}
+        widths={imageWidths}
+        sizes="auto, (max-width: 767px) 160px, 240px"
+        format="webp"
+        quality={90}
+        loading="lazy"
+        class="project-logo-image"
+      />
+    </div>
+  ) : (
+    <>
+      <div class="project-art-fallback">
+        <ProjectArt kind={kind} />
+      </div>
+      <div class="project-logo-placeholder">{settings?.initials ?? 'PR'}</div>
+    </>
+  )}
+</div>

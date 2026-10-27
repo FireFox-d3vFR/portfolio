@@ -1,0 +1,16 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<svg viewBox="0 0 60 90" fill="none" aria-hidden="true" class:list={['polygon-leaf', className]}>
+  <path d="M30 2 52 24 58 49 30 77 3 51 8 26Z" fill="currentColor" opacity=".65" />
+  <path d="m30 2 0 75L8 26Z" fill="currentColor" opacity=".9" />
+  <path
+    d="m30 77 0-56M30 48 48 30M30 57 14 42M30 77 27 88"
+    stroke="var(--bark)"
+    stroke-width="1.2"
+  />
+</svg>

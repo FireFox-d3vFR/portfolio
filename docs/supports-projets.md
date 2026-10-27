@@ -2,9 +2,9 @@
 
 ## Organisation
 
-Les textes éditoriaux des projets sont dans `src/data/portfolio.ts`. L’alternance Orange possède un contenu distinct dans `src/data/entries.ts`, centré sur la progression et le cadre professionnel ; le projet Orange reste fondé sur les contributions applicatives. `src/data/entries.ts` les réutilise pour les modales des projets et du parcours : contexte, contribution personnelle, technologies et bilan ne sont pas dupliqués.
+Les textes éditoriaux des projets sont dans `src/data/projects/content.ts`. La [liste des supports à fournir](supports-a-fournir.md) précise les fichiers attendus par projet. L’alternance Orange possède un contenu distinct dans `src/data/journey/entries.ts`, centré sur la progression et le cadre professionnel ; le projet Orange reste fondé sur les contributions applicatives. `src/data/journey/entries.ts` les réutilise pour les modales des projets et du parcours : contexte, contribution personnelle, technologies et bilan ne sont pas dupliqués.
 
-Les supports sont configurés par identifiant dans `src/data/project-media.ts` : `anthlabs`, `enjo`, `amtta`, `osteo`, `portfolio`. Un projet sans entrée dans cette configuration ne présente pas de colonne Supports. Orange n’en possède pas : aucun document interne ou visuel métier n’est exposé.
+Les supports sont configurés par identifiant dans `src/data/projects/media.ts` : `anthlabs`, `enjo`, `amtta`, `osteo`, `portfolio`. Un projet sans entrée dans cette configuration ne présente pas de colonne Supports. Orange n’en possède pas : aucun document interne ou visuel métier n’est exposé.
 
 ## Remplacer les supports provisoires
 
@@ -14,7 +14,7 @@ Déposer les présentations dans `public/assets/pdf/`. Dans la propriété facul
 
 L’onglet PDF présente une carte avec le titre du document, une note et un bouton d’ouverture dans un nouvel onglet. Aucun lecteur PDF n’est intégré dans la modale et aucun téléchargement n’est forcé pour les présentations.
 
-Retirer ou adapter les mentions de démonstration dans `ProjectSupports.astro` lorsque de vrais supports sont fournis. Ne pas publier les exemples comme des captures réelles. Les fichiers de `public/` sont accessibles publiquement.
+Retirer ou adapter les mentions de démonstration dans `src/components/projects/ProjectSupports.astro` lorsque de vrais supports sont fournis. Ne pas publier les exemples comme des captures réelles. Les fichiers de `public/` sont accessibles publiquement.
 
 ## Présentation et liens
 

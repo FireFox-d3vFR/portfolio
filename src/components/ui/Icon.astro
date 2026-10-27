@@ -1,0 +1,49 @@
+---
+interface Props {
+  name:
+    | 'arrow'
+    | 'arrow-right'
+    | 'menu'
+    | 'close'
+    | 'git'
+    | 'briefcase'
+    | 'graduation'
+    | 'code'
+    | 'flag'
+    | 'trophy'
+    | 'pin';
+  class?: string;
+}
+const { name, class: className = 'h-4 w-4' } = Astro.props;
+const paths = {
+  'arrow-right': '<path d="M5 12h14m-6-6 6 6-6 6"/>',
+  arrow: '<path d="M7 7h10v10M7 17 17 7"/>',
+  menu: '<path d="M4 6h16M4 12h16M4 18h16"/>',
+  close: '<path d="m18 6-12 12M6 6l12 12"/>',
+  git: '<path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>',
+  briefcase:
+    '<path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16M2 10a20 20 0 0 0 20 0"/><rect x="2" y="6" width="20" height="14" rx="2"/>',
+  graduation: '<path d="m22 10-10-5L2 10l10 5 10-5ZM6 12v5c3 3 9 3 12 0v-5M22 10v6"/>',
+  code: '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6m6-14-4 16"/>',
+  flag: '<path d="M4 22V3s4-2 8 0 8 0 8 0v12s-4 2-8 0-8 0-8 0"/>',
+  trophy:
+    '<path d="M8 21h8m-4-4v4M8 3h8v7a4 4 0 0 1-8 0V3Zm0 1H4v3a4 4 0 0 0 4 4m8-7h4v3a4 4 0 0 1-4 4"/>',
+  pin: '<path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+};
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  class={className}
+>
+  <Fragment set:html={paths[name]} />
+</svg>

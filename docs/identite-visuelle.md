@@ -94,7 +94,7 @@ La liste conserve le titre et les dates, avec les badges techniques ou métier �
 
 ### Logos fournis : ajustement des proportions
 
-Les cinq logos reçus sont affichés en grille et en liste. Leurs dimensions et marges se règlent par projet dans src/data/project-logos.ts. Les boîtes plus généreuses d’AMTTA et du cabinet compensent leurs marges transparentes. Le fond de présentation est blanc pour préserver la lisibilité des marques dans toutes les saisons. Les originaux restent inchangés ; Astro produit les variantes WebP à qualité 90 sans dépasser la définition source.
+Les cinq logos reçus sont affichés en grille et en liste. Leurs dimensions et marges se règlent par projet dans src/data/projects/logos.ts. Les boîtes plus généreuses d’AMTTA et du cabinet compensent leurs marges transparentes. Le fond de présentation est blanc pour préserver la lisibilité des marques dans toutes les saisons. Les originaux restent inchangés ; Astro produit les variantes WebP à qualité 90 sans dépasser la définition source.
 
 
 ### Cohérence des modales
@@ -116,6 +116,6 @@ Les saisons peuvent désormais suivre la date locale du navigateur : mars–mai,
 
 ### Disponibilité et badges du Hero
 
-Les trois états disponibles, à l’écoute et indisponible utilisent des libellés explicites et des indicateurs vert, ambre et rouge brique. Leurs couleurs gardent leur sens quelle que soit la saison et s’adaptent à l’apparence claire/sombre. Le statut est un contenu propriétaire, configuré dans src/data/profile.ts ; le public reste actuellement sur disponible. La planche /identite/ présente les trois variantes.
+Les trois états disponibles, à l’écoute et indisponible utilisent des libellés explicites et des indicateurs vert, ambre et rouge brique. Leurs couleurs gardent leur sens quelle que soit la saison et s’adaptent à l’apparence claire/sombre. Le statut est un contenu propriétaire, configuré dans src/data/identity/profile.ts ; le public reste actuellement sur disponible. La planche /identite/ présente les trois variantes.
 
 Le Hero associe les logos Symfony et Vue.js à leurs noms ; DevOps & Cloud reste un seul badge avec une boucle infinie générique. L’introduction est conservée jusqu’à validation d’une formulation représentant le parcours dans son ensemble.

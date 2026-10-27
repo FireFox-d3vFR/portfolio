@@ -22,13 +22,13 @@ En attendant les fichiers :
 - les illustrations actuelles restent dans la grille ;
 - les vignettes de liste affichent de simples initiales de repérage, qui ne sont pas présentées comme des logos officiels.
 
-La correspondance des noms se trouve dans `src/data/project-logos.ts`.
+La correspondance des noms se trouve dans `src/data/projects/logos.ts`.
 Les modales des projets utilisent le même composant et les mêmes logos que les cartes.
 
 
 ## Réglages après réception — 27 octobre 2026
 
-Les cinq logos ont été ajoutés et vérifiés. Les réglages optiques sont dans src/data/project-logos.ts :
+Les cinq logos ont été ajoutés et vérifiés. Les réglages optiques sont dans src/data/projects/logos.ts :
 - gridWidth / gridHeight : boîte maximale du logo dans la grille ;
 - listPadding / mobilePadding : marges dans la vignette de liste.
 

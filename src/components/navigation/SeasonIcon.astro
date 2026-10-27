@@ -1,0 +1,28 @@
+---
+interface Props {
+  season: string;
+}
+const { season } = Astro.props;
+const paths: Record<string, string> = {
+  printemps:
+    '<circle cx="12" cy="12" r="2.5"/><path d="M12 9c-5-7-9-1-5 2-8 2-4 8 1 5-1 8 6 8 7 2 6 5 10-1 4-5 7-4 2-10-4-6-1-7-7-7-7 0Z"/>',
+  ete: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>',
+  automne: '<path d="M20 3C7 2 2 8 5 15s14 5 15-12Z"/><path d="m3 21 12-12M8 16v-5m0 5h5"/>',
+  hiver:
+    '<path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7M9 4l3 3 3-3M9 20l3-3 3 3M4 10l4-1-1-4m10 14-1-4 4-1M4 14l4 1-1 4m10-14-1 4 4 1"/>',
+};
+---
+
+<svg
+  viewBox="0 0 24 24"
+  width="19"
+  height="19"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+>
+  <Fragment set:html={paths[season] ?? paths.automne} />
+</svg>

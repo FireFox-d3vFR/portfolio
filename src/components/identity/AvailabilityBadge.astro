@@ -1,0 +1,31 @@
+---
+import {
+  availabilityStates,
+  availabilityStatus,
+  type AvailabilityStatus,
+} from '../../data/identity/profile';
+interface Props {
+  status?: AvailabilityStatus;
+  class?: string;
+}
+const { status = availabilityStatus, class: className } = Astro.props;
+const state = availabilityStates[status];
+---
+
+<div
+  data-availability={status}
+  class:list={[
+    'availability-badge inline-flex items-center gap-2.5 rounded-full border bg-card px-3.5 py-1.5 text-xs font-medium',
+    className,
+  ]}
+  style={{ '--availability-light': state.light, '--availability-dark': state.dark }}
+>
+  <span
+    class:list={[
+      'availability-dot h-2 w-2 shrink-0 rounded-full',
+      status === 'available' && 'pulse-dot',
+    ]}
+    aria-hidden="true"
+  ></span>
+  <span>{state.label}</span>
+</div>

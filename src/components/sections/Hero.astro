@@ -1,0 +1,49 @@
+---
+import FoxScene from '../identity/FoxScene.astro';
+import AvailabilityBadge from '../identity/AvailabilityBadge.astro';
+import TechnologyLogo from '../ui/TechnologyLogo.astro';
+---
+
+<section id="accueil" class="relative overflow-hidden pt-24 pb-20 md:pt-28 md:pb-24">
+  <div class="hero-grain pointer-events-none absolute inset-0" aria-hidden="true"></div>
+  <div class="relative mx-auto grid max-w-6xl items-center gap-14 px-5 md:grid-cols-[1.15fr_0.85fr]">
+    <div class="reveal">
+      <AvailabilityBadge class="mb-8" />
+      <p class="mb-3 font-mono text-sm text-muted-foreground">Jonathan Maquenhem</p>
+      <h1 class="text-5xl leading-[0.95] font-medium sm:text-6xl lg:text-7xl">
+        Développeur
+        <br />
+        <em class="font-normal text-primary">Full Stack</em>
+      </h1>
+      <p class="mt-6 flex flex-wrap gap-2 font-mono text-sm">
+        {['Symfony', 'Vue.js', 'DevOps & Cloud'].map((item) => (
+          <span class="technology-tag rounded-md bg-secondary px-2.5 py-1 text-secondary-foreground">
+            <TechnologyLogo name={item} />
+            <span>{item}</span>
+          </span>
+        ))}
+      </p>
+      <p class="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
+        J’aime transformer un besoin concret en une application utile, puis l’accompagner jusqu’à sa
+        mise en production. Mon approche relie développement Full Stack, Cloud et DevOps, en gardant
+        les usages au cœur des choix techniques.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a
+          href="#projets"
+          class="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+        >
+          Découvrir mes projets{' '}
+          <span class="transition-transform group-hover:translate-x-1">→</span>
+        </a>
+        <a
+          href="#contact"
+          class="inline-flex items-center rounded-full border border-foreground/20 px-6 py-3.5 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
+        >
+          Me contacter
+        </a>
+      </div>
+    </div>
+    <FoxScene />
+  </div>
+</section>

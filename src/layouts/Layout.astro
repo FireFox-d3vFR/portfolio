@@ -12,14 +12,22 @@ import '@fontsource-variable/fraunces/full-italic.css';
 import '../styles/portfolio.css';
 import '@fontsource/manrope/latin-700.css';
 
-const favicons = await Promise.all([16, 32, 48].map(size => getImage({ src: faviconTailDark, width: size, height: size, format: 'png' })));
+const favicons = await Promise.all(
+  [16, 32, 48].map((size) =>
+    getImage({ src: faviconTailDark, width: size, height: size, format: 'png' }),
+  ),
+);
 
-interface Props { title?: string; description?: string; }
+interface Props {
+  title?: string;
+  description?: string;
+}
 const {
   title = 'Jonathan Maquenhem — Développeur Full Stack',
   description = 'Développeur Full Stack, curieux des besoins métier, du DevOps et de l’intégration. Découvrez mon parcours et mes contributions.',
 } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="fr">
   <head>
@@ -30,18 +38,41 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    {favicons.map(icon => <link rel="icon" type="image/png" sizes={icon.attributes.width + 'x' + icon.attributes.height} href={icon.src} />)}
+    {favicons.map((icon) => (
+      <link
+        rel="icon"
+        type="image/png"
+        sizes={icon.attributes.width + 'x' + icon.attributes.height}
+        href={icon.src}
+      />
+    ))}
     <script is:inline define:vars={{ seasonMonths: SEASONS_BY_MONTH }}>
-      // Apply the initial palette before painting, using the same month table as the controller.
+      // Appliquer la palette avant l’affichage, avec le calendrier partagé du contrôleur.
       let savedMode = null;
       let savedSeason = null;
-      try { savedMode = localStorage.getItem('portfolio-season-mode'); savedSeason = localStorage.getItem('portfolio-season'); } catch {}
-      const manual = ['printemps','ete','automne','hiver'].includes(savedSeason) && (savedMode === 'manual' || savedMode === null);
-      document.documentElement.dataset.season = manual ? savedSeason : seasonMonths[new Date().getMonth()];
+      try {
+        savedMode = localStorage.getItem('portfolio-season-mode');
+        savedSeason = localStorage.getItem('portfolio-season');
+      } catch {}
+      const manual =
+        ['printemps', 'ete', 'automne', 'hiver'].includes(savedSeason) &&
+        (savedMode === 'manual' || savedMode === null);
+      document.documentElement.dataset.season = manual
+        ? savedSeason
+        : seasonMonths[new Date().getMonth()];
       document.documentElement.dataset.seasonMode = manual ? 'manual' : 'auto';
-      try { const appearance = localStorage.getItem('portfolio-appearance'); if (appearance === 'dark' || appearance === 'light') document.documentElement.dataset.appearance = appearance; } catch {}
+      try {
+        const appearance = localStorage.getItem('portfolio-appearance');
+        if (appearance === 'dark' || appearance === 'light')
+          document.documentElement.dataset.appearance = appearance;
+      } catch {}
     </script>
     <title>{title}</title>
   </head>
-  <body><a class="skip-link" href="#contenu">Aller au contenu</a><slot /></body>
+  <body>
+    <a class="skip-link" href="#contenu">
+      Aller au contenu
+    </a>
+    <slot />
+  </body>
 </html>

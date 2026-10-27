@@ -18,7 +18,7 @@ Astro génère les variantes WebP au build. Ces images constituent une base prov
 
 Extractions réalisées avec l’outil intégré imagegen à partir des planches validées, sans leur paysage, leur texte ni leurs logos. Les planches s’inspirent de l’avatar et des dessins fournis par Jonathan.
 
-La variante active du Hero est choisie dans `src/data/fox.ts`. Le Hero conserve ses paysages saisonniers existants. Les deux personnages sont comparables dans `/identite/`. `fox.png` est conservé comme référence historique. Les nouveaux logos de navigation et du footer sont dans `src/assets/brand/`, avec leur sélection dans `src/data/fox.ts`. Aucun original n’est écrasé.
+La variante active du Hero est choisie dans `src/data/identity/fox.ts`. Le Hero conserve ses paysages saisonniers existants. Les deux personnages sont comparables dans `/identite/`. `fox.png` est conservé comme référence historique. Les nouveaux logos de navigation et du footer sont dans `src/assets/brand/`, avec leur sélection dans `src/data/identity/fox.ts`. Aucun original n’est écrasé.
 
 
 ## Empreintes de renard, 27 octobre 2026

@@ -1,9 +1,0 @@
----
-import TechnologyLogo from './TechnologyLogo.astro';
-interface Props { name: string; compact?: boolean; }
-const { name, compact = false } = Astro.props;
----
-<li class:list={['project-technology-tag rounded-md bg-secondary font-mono text-secondary-foreground', compact ? 'px-2 py-1 text-[11px]' : 'px-2.5 py-1 text-xs']}>
-  <TechnologyLogo name={name} />
-  <span>{name}</span>
-</li>

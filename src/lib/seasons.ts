@@ -1,11 +1,21 @@
 export const SEASONS = ['printemps', 'ete', 'automne', 'hiver'] as const;
-export type Season = typeof SEASONS[number];
+export type Season = (typeof SEASONS)[number];
 export type SeasonMode = 'auto' | 'manual';
 
-// Fixed calendar periods for this northern-hemisphere portfolio, using local dates.
+// Saisons calendaires de l’hémisphère nord, calculées avec la date locale.
 export const SEASONS_BY_MONTH: readonly Season[] = [
-  'hiver', 'hiver', 'printemps', 'printemps', 'printemps', 'ete',
-  'ete', 'ete', 'automne', 'automne', 'automne', 'hiver',
+  'hiver',
+  'hiver',
+  'printemps',
+  'printemps',
+  'printemps',
+  'ete',
+  'ete',
+  'ete',
+  'automne',
+  'automne',
+  'automne',
+  'hiver',
 ];
 
 export function isSeason(value: unknown): value is Season {
@@ -18,11 +28,16 @@ export function getSeasonForDate(date = new Date()): Season {
   return season;
 }
 
-export function resolveSeasonPreferences(savedMode: string | null, savedSeason: string | null, date = new Date()) {
+export function resolveSeasonPreferences(
+  savedMode: string | null,
+  savedSeason: string | null,
+  date = new Date(),
+) {
   const automaticSeason = getSeasonForDate(date);
   const hasManualChoice = isSeason(savedSeason);
-  // Migrate previous season selections without silently replacing the visitor's choice.
-  const mode: SeasonMode = hasManualChoice && (savedMode === 'manual' || savedMode === null) ? 'manual' : 'auto';
+  // Conserver le choix du visiteur lors de la reprise des anciennes préférences.
+  const mode: SeasonMode =
+    hasManualChoice && (savedMode === 'manual' || savedMode === null) ? 'manual' : 'auto';
   return {
     mode,
     manualSeason: hasManualChoice ? savedSeason : automaticSeason,
@@ -31,7 +46,7 @@ export function resolveSeasonPreferences(savedMode: string | null, savedSeason: 
 }
 
 export function millisecondsUntilNextLocalDay(date = new Date()): number {
-  // Calendar arithmetic also handles leap years and 23/25-hour daylight-saving days.
+  // Le calcul calendaire prend en compte les années bissextiles et les changements d’heure.
   const midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
   return midnight.getTime() - date.getTime() + 100;
 }
