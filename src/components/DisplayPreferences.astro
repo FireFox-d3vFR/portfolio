@@ -1,0 +1,29 @@
+---
+import SeasonSelector from './SeasonSelector.astro';
+---
+<button type="button" popovertarget="display-preferences" aria-controls="display-preferences" aria-expanded="false" data-preferences-toggle class="preferences-toggle grid h-9 w-9 shrink-0 cursor-pointer place-items-center rounded-full border bg-card text-bark transition-colors hover:bg-secondary" aria-label="Préférences d’affichage" title="Préférences d’affichage">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" fill="var(--card)"/><circle cx="15" cy="12" r="2" fill="var(--card)"/><circle cx="9" cy="18" r="2" fill="var(--card)"/></svg>
+</button>
+<div id="display-preferences" popover="auto" class="preferences-panel rounded-2xl border bg-card p-5 text-foreground" aria-labelledby="preferences-heading">
+  <h2 id="preferences-heading" class="font-sans text-base font-semibold">Préférences</h2>
+  <div class="mt-5 flex items-center justify-between gap-4">
+    <span id="appearance-label" class="text-sm">Mode sombre</span>
+    <button type="button" role="switch" aria-checked="false" aria-labelledby="appearance-label" data-appearance-toggle class="appearance-switch cursor-pointer" title="Activer ou désactiver le mode sombre"><span aria-hidden="true"></span></button>
+  </div>
+  <div class="mt-5 border-t pt-4">
+    <div class="mb-4 flex items-center justify-between gap-3">
+      <div><p id="season-auto-label" class="text-sm">Saison automatique</p><p data-season-mode-label class="mt-1 text-xs text-muted-foreground">Selon la date</p></div>
+      <button type="button" role="switch" aria-checked="true" aria-labelledby="season-auto-label" data-season-auto class="appearance-switch shrink-0 cursor-pointer"><span aria-hidden="true"></span></button>
+    </div>
+    <div class="mb-3 flex items-center justify-between"><p class="text-sm">Saison</p><span data-season-name class="font-mono text-xs text-muted-foreground">Automne</span></div>
+    <SeasonSelector iconsOnly />
+    <p class="mt-2 text-xs leading-relaxed text-muted-foreground">Choisir une saison désactive l’automatique.</p>
+  </div>
+  <div class="mt-5 flex items-center justify-between gap-4 border-t pt-4">
+    <p class="text-sm">Langue</p>
+    <div role="group" aria-label="Langue du site" class="inline-flex gap-1 rounded-full border p-1 text-xs">
+      <button type="button" aria-pressed="true" aria-label="Français" class="rounded-full bg-secondary px-3 py-1.5 font-semibold text-secondary-foreground" lang="fr">FR</button>
+      <button type="button" disabled aria-label="Anglais — à venir" title="Anglais — à venir" class="cursor-not-allowed rounded-full px-3 py-1.5 text-muted-foreground opacity-45" lang="en">EN</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+---
+interface Props { n: string; ink?: boolean; }
+const { n, ink = false } = Astro.props;
+---
+<p class:list={['mb-4 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em]', ink ? 'text-ink-muted' : 'text-muted-foreground']}>
+  <span class="text-primary">{n}</span>
+  <span class:list={['section-rule h-px w-10', ink ? 'bg-ink-border' : 'bg-border']}></span>
+  <slot />
+</p>

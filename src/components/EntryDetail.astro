@@ -1,0 +1,35 @@
+---
+import { projectMedia } from '../data/project-media';
+import ProjectSupports from './ProjectSupports.astro';
+import type { Entry } from '../data/entries';
+import ProjectCover from './ProjectCover.astro';
+import Icon from './Icon.astro';
+import TechnologyBadge from './TechnologyBadge.astro';
+interface Props { entry: Entry; visual?: boolean; }
+const { entry, visual = false } = Astro.props;
+const media = projectMedia[entry.id];
+---
+<dialog id={'detail-' + entry.id} class:list={['entry-dialog', { 'project-detail-dialog': visual }]} data-project-detail={visual || undefined} class="w-[calc(100%-2rem)] max-w-2xl overflow-y-auto rounded-lg border bg-background p-0 text-foreground shadow-lg" aria-labelledby={'title-' + entry.id} aria-describedby={entry.summary ? 'summary-' + entry.id : undefined}>
+  <div class="detail-layout">
+  <div class="detail-copy p-6 sm:p-8">
+    {visual && <div class="detail-identity mb-6"><ProjectCover id={entry.logoId ?? entry.id} kind={entry.visual} /></div>}
+    <p class="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 pr-5 font-mono text-xs text-muted-foreground">
+      <span class={'journey-chip cat-' + entry.category}>{entry.kind}</span><span>·</span><span>{entry.dates}</span>
+    </p>
+    <h2 id={'title-' + entry.id} class="text-2xl leading-tight font-medium sm:text-3xl">{entry.title}</h2>
+    {(entry.org !== entry.kind || entry.location) && <p class="mt-2 flex flex-wrap items-center gap-x-3 text-sm font-semibold text-bark">
+      {entry.org !== entry.kind && entry.org}{entry.location && <span class="inline-flex items-center gap-1 font-normal text-muted-foreground"><Icon name="pin" class="h-3.5 w-3.5" />{entry.location}</span>}
+    </p>}
+    {entry.highlight && <p class="mt-4 inline-flex items-center gap-2 rounded-full border border-primary/40 px-3 py-1 text-xs font-semibold text-primary"><Icon name="trophy" class="h-3.5 w-3.5" />{entry.highlight}</p>}
+    {entry.summary && <p id={'summary-' + entry.id} class="mt-5 text-sm leading-relaxed text-muted-foreground">{entry.summary}</p>}
+    {entry.details.map(group => <div class="mt-6">{group.title && <h3 class="mb-2 font-mono text-xs uppercase tracking-[0.14em] text-primary">{group.title}</h3>}<ul class="space-y-2 text-sm leading-relaxed">{group.items.map(item => <li class="relative pl-4 before:absolute before:top-2 before:left-0 before:h-1.5 before:w-1.5 before:rotate-45 before:bg-primary/70">{item}</li>)}</ul></div>)}
+    {entry.tech && <ul class="mt-7 flex flex-wrap gap-2">{entry.tech.map(item => <TechnologyBadge name={item} />)}</ul>}
+    {entry.relatedEntry && <button type="button" data-entry={entry.relatedEntry.id} aria-controls={'detail-' + entry.relatedEntry.id} aria-haspopup="dialog" class="detail-link mt-6 cursor-pointer">{entry.relatedEntry.label}<Icon name="arrow" /></button>}
+    {entry.note && <p class="mt-6 border-t pt-4 text-xs leading-relaxed text-muted-foreground">{entry.note}</p>}
+    {entry.link && <a href={entry.link.href} target="_blank" rel="noopener noreferrer" class="detail-link mt-5">{entry.link.label}<Icon name="arrow" /><span class="sr-only"> (nouvel onglet)</span></a>}
+    {visual && !entry.link && <p class="mt-5 text-xs text-muted-foreground">{entry.id === 'orange-project' ? 'Application interne · aucun lien public.' : entry.id === 'enjo' ? 'Concept présenté au jury · aucune démonstration applicative.' : 'Site en cours de finalisation · lien public à venir.'}</p>}
+  </div>
+  {media && <ProjectSupports media={media} id={entry.id} />}
+  </div>
+  <button type="button" autofocus data-close-dialog class="detail-close absolute top-4 right-4 grid h-8 w-8 cursor-pointer place-items-center rounded-md bg-background text-foreground transition-colors hover:bg-accent" aria-label="Fermer les détails"><Icon name="close" /></button>
+</dialog>

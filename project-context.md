@@ -1331,3 +1331,11 @@ Avant de développer l’intégralité du portfolio, commencer par cadrer :
 Créer ensuite une première version verticale simple du site.
 
 L’objectif est d’obtenir rapidement une base cohérente avant d’ajouter progressivement les détails, animations et raffinements graphiques.
+
+## Évolution confirmée le 26 octobre 2026 — portage fidèle de Lovable
+
+Jonathan demande de reprendre presque à l’identique la référence Lovable dans Astro : composition, navigation arrondie, survols, animations, saisons et graphe Git. Ce choix remplace la première adaptation libre et avance les saisons ainsi que le graphe, initialement différés.
+
+La version actuelle utilise Astro statique, Tailwind CSS 4 via Vite et des interactions TypeScript natives, sans runtime React. Automne reste le thème initial ; les quatre saisons sont sélectionnables et mémorisées. Le bloc gauche sticky du Parcours est conservé sur grand écran. Les contributions documentées priment sur les textes du prototype.
+
+Voir [le suivi du 26 octobre](docs/suivi/2026-10-26.md) et la documentation d’identité pour les changements et vérifications.

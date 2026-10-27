@@ -1,0 +1,13 @@
+---
+import SeasonIcon from './SeasonIcon.astro';
+interface Props { iconsOnly?: boolean; }
+const { iconsOnly = false } = Astro.props;
+const seasons = [['printemps', 'Printemps'], ['ete', 'Été'], ['automne', 'Automne'], ['hiver', 'Hiver']];
+---
+<div role="group" aria-label="Choisir une saison" class:list={['season-selector inline-flex gap-1 rounded-full border bg-card p-1', iconsOnly ? 'w-full' : 'flex-wrap']}>
+  {seasons.map(([key, label]) => (
+    <button type="button" data-season-choice={key} aria-pressed={key === 'automne'} aria-label={label} title={label} class:list={['season-choice inline-flex cursor-pointer items-center justify-center gap-2 rounded-full text-xs font-medium transition-colors', iconsOnly ? 'flex-1 px-3 py-2.5' : 'px-3 py-1']}>
+      <SeasonIcon season={key} /><span class={iconsOnly ? 'sr-only' : ''}>{label}</span>
+    </button>
+  ))}
+</div>

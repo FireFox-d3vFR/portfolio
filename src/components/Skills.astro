@@ -1,0 +1,20 @@
+---
+import SectionLabel from './SectionLabel.astro';
+import TechnologyLogo from './TechnologyLogo.astro';
+import PolygonLeaf from './PolygonLeaf.astro';
+import MountainMotif from './MountainMotif.astro';
+import { skills } from '../data/portfolio';
+const icons = ['</>', '{ }', '$_'];
+---
+<section id="competences" class="relative overflow-hidden bg-ink py-24 text-ink-foreground">
+  <div class="nature-texture pointer-events-none absolute inset-0" aria-hidden="true"></div>
+  <MountainMotif class="pointer-events-none absolute inset-x-0 bottom-0 h-44 w-full text-ink-border" />
+  <PolygonLeaf class="pointer-events-none absolute top-14 right-[9%] h-20 w-14 -rotate-12 text-primary/20" />
+  <div class="relative mx-auto max-w-6xl px-5">
+    <div class="reveal max-w-2xl"><SectionLabel n="02" ink>Compétences</SectionLabel><h2 class="text-4xl font-medium md:text-5xl">Une boîte à outils <em class="text-primary">complète.</em></h2></div>
+    <div class="mt-14 grid gap-5 md:grid-cols-3">{skills.map((group,i) => <div class="reveal skill-card group relative rounded-lg border border-ink-border bg-ink/60 p-7 transition-colors hover:border-primary/60">
+      <div class="flex items-center justify-between"><h3 class="text-2xl font-medium">{group.title}</h3><span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-primary/15 font-mono text-sm text-primary transition-transform group-hover:-rotate-6" aria-hidden="true">{icons[i]}</span></div>
+      <ul class="mt-8 flex flex-wrap gap-2">{group.items.map(item => <li class="technology-tag rounded-full border border-ink-border px-3.5 py-1.5 font-mono text-xs text-ink-muted transition-colors hover:border-primary hover:text-ink-foreground"><TechnologyLogo name={item} /><span>{item}</span></li>)}</ul>
+    </div>)}</div>
+  </div>
+</section>

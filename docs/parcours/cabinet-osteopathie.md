@@ -2,7 +2,8 @@
 
 Catégorie : projets indépendants et associatifs.  
 Période : 2026.  
-Destinataires : cabinet de deux praticiennes.  
+Destinataires : cabinet de deux praticiennes.
+Désignation publique validée le 27 octobre 2026 : Cabinet d’ostéopathie en Chartreuse (désignation descriptive).  
 Statut : réalisation avancée, en cours de finalisation ; première livraison non encore confirmée.  
 Dernière mise à jour : 17 octobre 2026.
 

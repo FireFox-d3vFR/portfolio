@@ -1,0 +1,7 @@
+---
+import { Image } from 'astro:assets';
+import { foxLogoVariants, activeFoxLogo } from '../data/fox';
+interface Props { variant?: keyof typeof foxLogoVariants; class?: string; }
+const { variant = activeFoxLogo, class: className = 'h-8 w-8 object-contain' } = Astro.props;
+---
+<Image src={foxLogoVariants[variant].source} alt="" width={96} height={96} widths={[32, 64, 96, 160]} sizes="32px" format="webp" quality={90} class={className} />

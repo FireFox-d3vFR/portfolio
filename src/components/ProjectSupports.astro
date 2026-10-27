@@ -1,0 +1,39 @@
+---
+import type { ProjectMedia } from '../data/project-media';
+import Icon from './Icon.astro';
+interface Props { media: ProjectMedia; id: string; }
+const { media, id } = Astro.props;
+---
+<aside class="project-supports" aria-label="Supports du projet" data-project-supports>
+  <h3 class="font-mono text-xs uppercase tracking-[0.14em] text-primary">Supports</h3>
+  <p class="mt-2 text-xs leading-relaxed text-muted-foreground">{media.description ?? 'Aperçus de démonstration, à remplacer par les supports du projet.'}</p>
+  {media.pdf && <div class="support-switch mt-4" role="group" aria-label="Type de support">
+    <button type="button" data-support-tab="images" aria-pressed="true" aria-controls={'images-' + id}>Images</button>
+    <button type="button" data-support-tab="pdf" aria-pressed="false" aria-controls={'pdf-' + id}>PDF</button>
+  </div>}
+  <div id={'images-' + id} data-support-panel="images" class="mt-4">
+    <figure>
+      <img data-support-image src={media.images[0].src} alt={media.images[0].alt} width="800" height="500" loading="lazy" class="support-image" />
+      <figcaption data-support-caption class="mt-2 text-xs text-muted-foreground">{media.images[0].caption}</figcaption>
+    </figure>
+    {media.images.length > 1 && <div class="support-thumbnails mt-3" role="group" aria-label="Choisir une image">
+      {media.images.map((image, i) => <button type="button" data-support-thumbnail data-src={image.src} data-alt={image.alt} data-caption={image.caption} aria-pressed={i === 0 ? 'true' : 'false'} aria-label={image.caption}>
+        <img src={image.src} alt="" width="800" height="500" loading="lazy" />
+      </button>)}
+    </div>}
+    <p class="mt-3 text-xs leading-relaxed text-muted-foreground">{media.imageNote ?? 'Ces compositions illustrent la mise en page ; ce ne sont pas des captures du projet.'}</p>
+  </div>
+  {media.pdf && <div id={'pdf-' + id} data-support-panel="pdf" class="mt-4" hidden>
+    <article class="support-document-card">
+      <div class="support-document-icon" aria-hidden="true">
+        <svg width="30" height="36" viewBox="0 0 24 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M4 1h10l6 6v20H4zM14 1v7h6M8 14h8M8 18h8M8 22h5" /></svg>
+      </div>
+      <p class="mt-5 font-mono text-xs uppercase tracking-[0.12em] text-primary">Document PDF · démonstration</p>
+      <h4 class="mt-3 text-xl font-medium">{media.pdf.title}</h4>
+      <p class="mt-3 text-sm leading-relaxed text-muted-foreground">{media.pdf.note}</p>
+      <a href={media.pdf.href} target="_blank" rel="noopener noreferrer" class="detail-link mt-6">{media.pdf.label}<Icon name="arrow" /><span class="sr-only"> (nouvel onglet)</span></a>
+      <p class="mt-3 text-xs text-muted-foreground">Le document s’ouvre dans un nouvel onglet.</p>
+    </article>
+  </div>}
+  {media.link && <a href={media.link.href} target="_blank" rel="noopener noreferrer" class="detail-link mt-6">{media.link.label}<Icon name="arrow" /><span class="sr-only"> (nouvel onglet)</span></a>}
+</aside>

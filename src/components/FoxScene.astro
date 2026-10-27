@@ -1,0 +1,50 @@
+---
+import { Image, getImage } from "astro:assets";
+import { foxVariants, heroFoxVariant } from "../data/fox";
+const fox = foxVariants[heroFoxVariant].source;
+import autumn from "../assets/images/autumn-landscape.jpg";
+import spring from "../assets/images/spring-landscape.png";
+import summer from "../assets/images/summer-landscape.png";
+import winter from "../assets/images/winter-landscape.png";
+import PolygonLeaf from "./PolygonLeaf.astro";
+const [automne, printemps, ete, hiver] = await Promise.all(
+  [autumn, spring, summer, winter].map((src) =>
+    getImage({ src, width: 768, height: 768, format: "webp" }),
+  ),
+);
+---
+
+<div class="reveal fox-scene relative mx-auto w-full max-w-sm">
+  <img
+    src={automne.src}
+    alt=""
+    width="768"
+    height="768"
+    data-landscape
+    data-automne={automne.src}
+    data-printemps={printemps.src}
+    data-ete={ete.src}
+    data-hiver={hiver.src}
+    class="fox-landscape pointer-events-none absolute"
+  />
+  <PolygonLeaf class="scene-leaf scene-leaf-one text-primary" />
+  <PolygonLeaf class="scene-leaf scene-leaf-two text-accent" />
+  <PolygonLeaf class="scene-leaf scene-leaf-three text-bark" />
+  <Image
+    src={fox}
+    alt="Renard assis de profil, signature de Jonathan"
+    width={512}
+    widths={[320, 512, 768]}
+    sizes="(max-width: 767px) calc(100vw - 40px), 384px"
+    format="webp"
+    loading="eager"
+    fetchpriority="high"
+    class="float fox-character relative w-full"
+  />
+  <div
+    class="commit-note absolute -bottom-4 -left-4 rounded-lg bg-ink px-4 py-3 font-mono text-xs text-ink-foreground sm:-left-10">
+    <span class="text-primary">$</span> git commit -m <span class="text-accent"
+      >"curieux & autonome"</span
+    ><span class="caret ml-0.5" aria-hidden="true">▍</span>
+  </div>
+</div>
