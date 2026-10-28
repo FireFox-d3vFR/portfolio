@@ -10,3 +10,7 @@ export const contact = {
   github: 'https://github.com/FireFox-d3vFR',
   linkedin: 'https://www.linkedin.com/in/jonathan-maquenhem/',
 };
+
+// Les essais locaux et les prévisualisations ne comptent pas comme des visites publiques.
+export const webAnalyticsEnabled =
+  import.meta.env.PROD && import.meta.env.VERCEL_ENV === 'production';

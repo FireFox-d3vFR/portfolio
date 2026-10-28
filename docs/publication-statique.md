@@ -27,7 +27,7 @@ Les chemins PNG dans les données servent de clés pour retrouver les sources lo
 
 ## Informations et confidentialité
 
-La page `/informations/` présente mon rôle d’éditeur, mon email de contact, les préférences mémorisées et les crédits. Aucun outil de publicité ou de mesure d’audience n’est ajouté. Les informations de Vercel ne sont affichées comme hébergement effectif que lors d’un build Vercel ; la version locale signale le statut de prévisualisation.
+La page `/informations/` présente mon rôle d’éditeur, mon email de contact, les préférences mémorisées et les crédits. Aucune publicité n’est ajoutée. Vercel Web Analytics est intégré avec son composant Astro officiel, uniquement lors des builds de production Vercel ; les versions locales et Preview ne déclenchent pas de collecte. La page Informations décrit cette mesure d’audience et renvoie vers les détails de confidentialité de Vercel. Les informations de Vercel ne sont affichées comme hébergement effectif que lors d’un build Vercel ; la version locale signale le statut de prévisualisation.
 
 Cette préparation décrit le fonctionnement actuel ; elle ne constitue pas une certification juridique ou une déclaration de conformité RGAA. Si les usages changent (formulaire, mesure d’audience, vente), les informations devront être revues.
 
@@ -43,3 +43,14 @@ Sources :
 - https://vercel.com/docs/functions/runtimes/node-js/node-js-versions
 - https://vercel.com/legal/privacy-notice
 - https://www.cnil.fr/fr/questions-reponses-lignes-directrices-modificatives-et-recommandation-cookies-traceurs
+
+
+## Vercel Web Analytics
+
+Package officiel @vercel/analytics, composant @vercel/analytics/astro dans le layout partagé. Le site reste intégralement statique ; aucun adaptateur serveur ajouté. Activation conditionnée à import.meta.env.PROD et VERCEL_ENV=production. Aucun événement personnalisé, suivi des clics ou Speed Insights ajouté.
+
+Dans le dashboard du projet Vercel, activer Analytics, puis déployer le commit qui contient le composant. Les visites et pages vues apparaîtront après consultation du site ; un bloqueur de contenu peut empêcher cette mesure. Les changements de section par ancre sur la même page et les clics du CV ne deviennent pas automatiquement des événements distincts.
+
+La mention « sans cookies » décrit le fonctionnement annoncé par Vercel et ne vaut pas certification juridique. Les informations de confidentialité ont été adaptées ; aucun dispositif publicitaire ou identifiant personnalisé n’est ajouté.
+
+Sources : https://vercel.com/docs/analytics/quickstart et https://vercel.com/docs/analytics/privacy-policy

@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import IdentityNavigation from '../components/navigation/IdentityNavigation.astro';
 import BackToTop from '../components/navigation/BackToTop.astro';
-import { contact } from '../data/site';
+import { contact, webAnalyticsEnabled } from '../data/site';
 const deployedOnVercel = import.meta.env.VERCEL === '1';
 ---
 
@@ -58,8 +58,8 @@ const deployedOnVercel = import.meta.env.VERCEL === '1';
       <section>
         <h2 class="mb-3 text-2xl text-foreground">Préférences et confidentialité</h2>
         <p>
-          Le site n’intègre ni publicité, ni outil de mesure d’audience, ni formulaire de contact.
-          Les polices et les illustrations sont servies avec le site.
+          Le site n’intègre ni publicité ni formulaire de contact. Les polices et les illustrations
+          sont servies avec le site.
         </p>
         <p class="mt-3">
           Le navigateur mémorise uniquement vos choix de saison, de mode clair ou sombre et de vue
@@ -72,6 +72,37 @@ const deployedOnVercel = import.meta.env.VERCEL === '1';
           j’utilise les informations de votre message pour vous répondre. L’hébergeur peut traiter
           les données techniques nécessaires à la livraison et à la sécurité du site, notamment
           l’adresse IP ; ses informations figurent ci-dessus.
+        </p>
+      </section>
+      <section>
+        <h2 class="mb-3 text-2xl text-foreground">Mesure d’audience</h2>
+        {webAnalyticsEnabled ? (
+          <>
+            <p>
+              J’utilise Vercel Web Analytics pour comprendre la fréquentation du portfolio : pages
+              consultées, sites d’origine des visites, localisation approximative, navigateurs et
+              types d’appareils. Les résultats qui me sont accessibles sont agrégés.
+            </p>
+            <p class="mt-3">
+              Vercel indique que cet outil fonctionne sans cookies et utilise un identifiant calculé
+              à partir de la requête, renouvelé quotidiennement. Aucun suivi de clic ni événement
+              personnalisé n’est ajouté sur ce portfolio. Les visites sont transmises à Vercel
+              uniquement sur la version de production.
+            </p>
+          </>
+        ) : (
+          <p>
+            Vercel Web Analytics est prévu pour mesurer la fréquentation de la version publique. Il
+            est désactivé dans cette version locale ou de prévisualisation.
+          </p>
+        )}
+        <p class="mt-3">
+          <a
+            class="underline underline-offset-4"
+            href="https://vercel.com/docs/analytics/privacy-policy"
+          >
+            Données traitées et confidentialité de Vercel Web Analytics
+          </a>
         </p>
       </section>
       <section>
