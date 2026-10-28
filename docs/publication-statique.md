@@ -9,7 +9,9 @@
 
 ## Adresse publique et indexation
 
-La configuration utilise `SITE_URL` si elle existe, sinon `VERCEL_PROJECT_PRODUCTION_URL`. Cette dernière indique le domaine de production, y compris pendant une prévisualisation ; aucun domaine personnel n’est requis pour le premier déploiement.
+La configuration lit `SITE_URL` dans l’environnement, puis dans le fichier `.env` local, sinon `VERCEL_PROJECT_PRODUCTION_URL`. Astro évalue sa configuration avant son chargement habituel des fichiers `.env` ; le helper Vite `loadEnv` charge donc explicitement cette valeur. Cette dernière indique le domaine de production, y compris pendant une prévisualisation ; aucun domaine personnel n’est requis pour le premier déploiement.
+
+En local, copier `.env.example` vers `.env` puis modifier `SITE_URL` si besoin ; reconstruire le site ou redémarrer le serveur après un changement. Le fichier `.env` reste ignoré par Git et n’est jamais poussé.
 
 Dans Vercel, conserver l’exposition des variables système activée. Pour un domaine personnel, définir `SITE_URL=https://le-domaine-choisi.fr` dans l’environnement de production puis reconstruire le site. L’URL ne doit contenir ni chemin ni identifiant.
 
@@ -33,7 +35,7 @@ Cette préparation décrit le fonctionnement actuel ; elle ne constitue pas une 
 
 Recette locale : génération statique, liens et assets locaux, menu mobile, ouvertures et fermeture Échap des modales, retour au déclencheur, galerie à 390 et 320 px, préférences des huit palettes. Lien d’évitement avec cible explicitement focalisable. Accent automnal clair légèrement foncé pour améliorer le contraste du petit texte et des boutons. Aucun remaniement du design.
 
-Une simulation locale des variables Vercel permet de contrôler la détection de domaine et les métadonnées. Elle ne remplace pas un vrai déploiement sur le compte du propriétaire. Restent à vérifier sur sa première Preview : HTTPS, redirections du domaine, en-têtes effectivement servis par Vercel, code HTTP 404 et téléchargement des PDF. Les essais locaux Chromium ne couvrent pas toutes les combinaisons de navigateurs, zooms et lecteurs d’écran.
+Une simulation locale des variables Vercel permet de contrôler la détection de domaine et les métadonnées. Elle ne remplace pas un vrai déploiement sur le compte du propriétaire. La recette du 28 octobre 2026 sur le domaine public confirme HTTPS, les en-têtes servis par Vercel, la réponse HTTP 404 et les PDF. Le périmètre exact et les limites sont décrits dans [la recette de production](recette-production.md). Les essais locaux Chromium ne couvrent pas toutes les combinaisons de navigateurs, zooms et lecteurs d’écran.
 
 Sources :
 - https://docs.astro.build/en/guides/deploy/vercel/
