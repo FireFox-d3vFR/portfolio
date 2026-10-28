@@ -11,6 +11,38 @@ export interface ProjectMedia {
 
 // Supports réels des projets ; les visuels Enjo sont des maquettes du concept.
 const sourceMedia: Record<string, ProjectMedia> = {
+  'orange-project': {
+    description: 'Aperçus d’AZOR : suivi métier, nommage des ports et gestion des imports.',
+    imageNote:
+      'Captures partagées avec autorisation et retouchées pour masquer les informations sensibles. Les en-têtes restent visibles pour expliquer les fonctionnalités. Le repère AZOR est une création de présentation pour ce portfolio.',
+    images: [
+      {
+        src: '/assets/projects/azor/tableau-ot.png',
+        alt: 'TableauOT dans AZOR : filtres, recherche et prise en charge des ordres de travaux, avec les données sensibles floutées',
+        caption: 'TableauOT : consultation et suivi des ordres de travaux',
+      },
+      {
+        src: '/assets/projects/azor/suivi-mise-en-service.png',
+        alt: 'Suivi Mise en Service dans AZOR : filtres, indicateurs et tableau de suivi, avec les informations de sites et de donneurs d’ordre masquées',
+        caption: 'Suivi Mise en Service : une vue centralisée de l’avancement',
+      },
+      {
+        src: '/assets/projects/azor/nommage-ports.png',
+        alt: 'Modale de nommage des ports WDM : comparaison entre ancien nom et nom proposé, contrôles d’éligibilité et validation DRY-RUN, avec noms et équipements floutés',
+        caption: 'Nommage des ports : ancien nom, nom proposé et validation',
+      },
+      {
+        src: '/assets/projects/azor/imports-planifies.png',
+        alt: 'Administration des crons dans AZOR : planification, résultats des imports, états et relance manuelle',
+        caption: 'Imports planifiés : exécutions, journaux et relance',
+      },
+      {
+        src: '/assets/projects/azor/reperes-graphiques.svg',
+        alt: 'Repères graphiques AZOR inspirés de Boosted : orange, noir, blanc, Helvetica Neue, tableaux et états explicites',
+        caption: 'Repères graphiques de l’interface AZOR',
+      },
+    ],
+  },
   portfolio: {
     link: { href: '/identite/', label: 'Explorer l’identité visuelle' },
     description: 'Aperçus de la version de travail du portfolio.',

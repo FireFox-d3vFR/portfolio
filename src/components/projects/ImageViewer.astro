@@ -1,0 +1,38 @@
+---
+import Icon from '../ui/Icon.astro';
+---
+
+<dialog
+  id="project-image-viewer"
+  class="entry-dialog image-viewer rounded-lg border bg-background p-0 text-foreground shadow-lg"
+  aria-labelledby="image-viewer-title"
+>
+  <div class="detail-layout">
+    <div class="image-viewer-toolbar">
+      <h2 id="image-viewer-title" class="font-mono text-xs">
+        Image agrandie
+      </h2>
+      <button type="button" data-image-size aria-pressed="false" class="support-enlarge">
+        Taille réelle
+      </button>
+    </div>
+    <figure>
+      <div class="image-viewer-canvas" data-image-canvas>
+        <img data-enlarged-image alt="" />
+      </div>
+      <figcaption
+        data-enlarged-caption
+        class="p-4 text-center text-xs text-muted-foreground"
+      ></figcaption>
+    </figure>
+  </div>
+  <button
+    type="button"
+    autofocus
+    data-close-dialog
+    class="detail-close absolute top-4 right-4 grid h-10 w-10 cursor-pointer place-items-center rounded-md bg-background text-foreground transition-colors hover:bg-accent"
+    aria-label="Fermer l’image agrandie"
+  >
+    <Icon name="close" />
+  </button>
+</dialog>

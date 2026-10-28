@@ -39,7 +39,7 @@ const backgrounds = [
       <article class="rounded-lg border bg-card p-5 sm:p-6">
         <h3 class="text-xl font-medium">{option.label}</h3>
         <p class="mt-2 text-sm leading-relaxed text-muted-foreground">{option.description}</p>
-        <div class="mt-5 grid grid-cols-3 gap-2 sm:gap-3">
+        <div class="mt-5 grid grid-cols-1 gap-2 min-[360px]:grid-cols-3 sm:gap-3">
           {backgrounds.map((bg) => (
             <div
               class="rounded-lg border p-2"
@@ -47,7 +47,7 @@ const backgrounds = [
             >
               <p class="text-center font-mono text-[10px]">{bg.label}</p>
               {option.id === 'tail' && bg.label === 'Noir' && (
-                <p class="mt-1 text-center text-[9px]">Version utilisée</p>
+                <span class="mt-1 block text-center text-[9px]">Version utilisée</span>
               )}
               <Image
                 src={option.id === 'tail' && bg.label === 'Noir' ? active : option.src}

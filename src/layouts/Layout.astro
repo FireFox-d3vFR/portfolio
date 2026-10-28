@@ -1,6 +1,7 @@
 ---
 import { getImage } from 'astro:assets';
 import Analytics from '@vercel/analytics/astro';
+import ImageViewer from '../components/projects/ImageViewer.astro';
 import { webAnalyticsEnabled } from '../data/site';
 import faviconTailDark from '../assets/brand/favicon-tail-dark.png';
 import { SEASONS_BY_MONTH } from '../lib/seasons';
@@ -97,6 +98,7 @@ const preventIndexing = noindex || !Astro.site || import.meta.env.VERCEL_ENV ===
       Aller au contenu
     </a>
     <slot />
+    <ImageViewer />
     {webAnalyticsEnabled && <Analytics mode="production" debug={false} />}
   </body>
 </html>

@@ -18,8 +18,12 @@ const colors = [
   ['Texte', '--foreground'],
   ['Soutien', '--bark'],
   ['Badges', '--secondary'],
-  ['Sous-bois', '--ink'],
-  ['Accent sombre', '--primary-on-ink'],
+  ['Fond contrasté', '--ink'],
+  ['Carte contrastée', '--ink-surface'],
+  ['Texte sur fond contrasté', '--ink-foreground'],
+  ['Texte secondaire contrasté', '--ink-muted'],
+  ['Contours des cartes', '--ink-border'],
+  ['Accent sur fond contrasté', '--primary-on-ink'],
 ];
 ---
 
@@ -28,10 +32,10 @@ const colors = [
   description="Mon travail graphique autour du renard, des couleurs d’automne et des paysages polygonaux, décliné au fil des saisons."
 >
   <IdentityNavigation />
-  <main id="contenu" tabindex="-1" class="mx-auto max-w-6xl px-5 py-16">
+  <main id="contenu" tabindex="-1" class="secondary-copy mx-auto max-w-6xl px-5 py-16">
     <div class="identity-introduction">
       <div>
-        <p class="mt-12 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+        <p class="identity-kicker mt-12 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
           Mon univers graphique
         </p>
         <h1 class="mt-5 text-5xl font-medium md:text-7xl">
@@ -159,16 +163,26 @@ const colors = [
         ))}
       </div>
     </section>
-    <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {colors.map(([label, token]) => (
-        <article class="overflow-hidden rounded-lg border bg-card">
-          <div class="h-28 border-b" style={'background:var(' + token + ')'}></div>
-          <div class="p-4">
-            <h2 class="text-lg">{label}</h2>
-          </div>
-        </article>
-      ))}
-    </div>
+    <section id="palette" class="mt-12" aria-labelledby="palette-heading">
+      <h2 id="palette-heading" class="text-2xl font-medium">
+        La palette de la saison.
+      </h2>
+      <p class="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+        Les mêmes couleurs accompagnent tout le site : fonds, cartes, textes et contours. Les
+        sections contrastées gardent leur profondeur, avec des surfaces distinctes et des repères
+        plus visibles. Les empreintes suivent elles aussi la couleur de saison.
+      </p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {colors.map(([label, token]) => (
+          <article class="overflow-hidden rounded-lg border bg-card">
+            <div class="h-28 border-b" style={'background:var(' + token + ')'}></div>
+            <div class="p-4">
+              <h2 class="text-lg">{label}</h2>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
     <section class="mt-16 rounded-lg border bg-card p-6 md:p-10">
       <p class="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
         Titres / Fraunces variable
@@ -194,7 +208,10 @@ const colors = [
         développeur.
       </p>
     </section>
-    <section class="mt-8 rounded-lg bg-ink p-6 text-ink-foreground md:p-10">
+    <section
+      id="contraste"
+      class="relative mt-8 overflow-hidden rounded-lg bg-ink p-6 text-ink-foreground md:p-10"
+    >
       <p class="font-mono text-xs uppercase tracking-[0.16em] text-ink-muted">En contraste</p>
       <h2 class="mt-5 text-4xl md:text-5xl">
         Du code solide.
@@ -206,6 +223,20 @@ const colors = [
         sections sombres, qui rythment la page. Les couleurs de saison restent présentes dans les
         deux ambiances.
       </p>
+      <div class="mt-7 grid gap-4 sm:grid-cols-2">
+        <article class="identity-ink-card rounded-lg border border-ink-border p-5">
+          <h3 class="text-xl font-medium">Des cartes lisibles.</h3>
+          <p class="mt-2 text-sm text-ink-muted">
+            Une surface légèrement détachée et un contour visible.
+          </p>
+        </article>
+        <article class="identity-ink-card rounded-lg border border-ink-border p-5">
+          <h3 class="text-xl font-medium">Une signature discrète.</h3>
+          <p class="mt-2 text-sm text-ink-muted">
+            Les décors accompagnent les couleurs sans prendre le dessus.
+          </p>
+        </article>
+      </div>
       <a
         class="mt-8 inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground"
         href="/#projets"

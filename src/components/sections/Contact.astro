@@ -15,7 +15,7 @@ const links = [
 
 <section id="contact" class="relative overflow-hidden bg-ink py-28 text-ink-foreground">
   <FoxTracks class="contact-tracks" />
-  <MountainMotif class="pointer-events-none absolute inset-x-0 bottom-0 h-48 w-full text-ink-border/50" />
+  <MountainMotif class="pointer-events-none absolute inset-x-0 bottom-0 h-48 w-full text-ink-decoration/50" />
   <PolygonLeaf class="pointer-events-none absolute top-16 left-[8%] h-16 w-12 -rotate-12 text-primary/20" />
   <div class="relative mx-auto max-w-6xl px-5 text-center">
     <div class="reveal mx-auto max-w-4xl">
@@ -28,12 +28,19 @@ const links = [
       <p class="mx-auto mt-6 max-w-lg text-ink-muted">
         Un projet, une opportunité ou simplement une question : je serai ravi d’échanger avec vous.
       </p>
-      <a
-        href={'mailto:' + contact.email}
-        class="mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 font-semibold text-primary-foreground transition-transform hover:scale-105"
+      <button
+        type="button"
+        data-copy-email={contact.email}
+        data-copy-feedback="copy-email-primary-status"
+        class="mt-10 inline-flex cursor-pointer items-center gap-2 rounded-full bg-primary px-8 py-4 font-semibold text-primary-foreground transition-transform hover:scale-105"
       >
-        Écrivez-moi <Icon name="arrow-right" />
-      </a>
+        Copier mon email <Icon name="arrow-right" />
+      </button>
+      <p
+        id="copy-email-primary-status"
+        role="status"
+        class="mt-2 min-h-5 text-xs text-ink-muted"
+      ></p>
     </div>
     <ul class="contact-links reveal mt-16">
       {links.map(([label, value, href]) => (
@@ -44,10 +51,8 @@ const links = [
             rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
             class="block h-full rounded-xl border border-ink-border p-5 text-left transition-colors hover:border-primary"
           >
-            <>
-              <p class="font-mono text-xs text-primary">{label}</p>
-              <p class="contact-address mt-1 text-sm leading-relaxed text-ink-muted">{value}</p>
-            </>
+            <p class="font-mono text-xs text-primary">{label}</p>
+            <p class="contact-address mt-1 text-sm leading-relaxed text-ink-muted">{value}</p>
           </a>
         </li>
       ))}

@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import { getProjectLogo, projectLogoNames } from '../../data/projects/logos';
 import ProjectArt from './ProjectArt.astro';
+import azorMark from '../../assets/logo/azor.svg?url';
 interface Props {
   id: string;
   kind?: string;
@@ -28,7 +29,18 @@ const imageWidths = logo
     '--logo-mobile-padding': (settings?.mobilePadding ?? 4) + 'px',
   }}
 >
-  {logo ? (
+  {id === 'azor' ? (
+    <div class="project-logo-frame">
+      <img
+        src={azorMark}
+        alt=""
+        width="600"
+        height="240"
+        loading="lazy"
+        class="project-logo-image"
+      />
+    </div>
+  ) : logo ? (
     <div class="project-logo-frame">
       <Image
         src={logo}

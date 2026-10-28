@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="240" viewBox="0 0 600 240" role="img" aria-labelledby="title desc">
+  <title id="title">AZOR</title>
+  <desc id="desc">Repère de présentation du projet AZOR pour le portfolio : trois modules reliés et un nom en noir et orange.</desc>
+  <g fill="none" stroke="#ff7900" stroke-width="8" stroke-linejoin="miter">
+    <path d="M56 120h80M96 80v80"/>
+    <rect x="44" y="108" width="24" height="24" fill="#fff"/>
+    <rect x="84" y="64" width="24" height="24" fill="#fff"/>
+    <rect x="124" y="108" width="24" height="24" fill="#ff7900"/>
+    <rect x="84" y="152" width="24" height="24" fill="#fff"/>
+  </g>
+  <text x="180" y="143" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="100" font-weight="700" letter-spacing="-5" fill="#000">AZ<tspan fill="#ff7900">OR</tspan></text>
+  <path d="M184 164h100" stroke="#ff7900" stroke-width="8"/>
+</svg>

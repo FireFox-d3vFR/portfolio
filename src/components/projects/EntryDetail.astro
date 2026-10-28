@@ -17,7 +17,7 @@ const media = projectMedia[entry.id];
   id={'detail-' + entry.id}
   class:list={['entry-dialog', { 'project-detail-dialog': visual }]}
   data-project-detail={visual || undefined}
-  class="w-[calc(100%-2rem)] max-w-2xl overflow-y-auto rounded-lg border bg-background p-0 text-foreground shadow-lg"
+  class="w-[calc(100%-2rem)] max-w-2xl overflow-hidden rounded-lg border bg-background p-0 text-foreground shadow-lg"
   aria-labelledby={'title-' + entry.id}
   aria-describedby={entry.summary ? 'summary-' + entry.id : undefined}
 >
@@ -28,7 +28,7 @@ const media = projectMedia[entry.id];
           <ProjectCover id={entry.logoId ?? entry.id} kind={entry.visual} />
         </div>
       )}
-      <p class="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 pr-5 font-mono text-xs text-muted-foreground">
+      <p class="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 pr-12 font-mono text-xs text-muted-foreground">
         <span class={'journey-chip cat-' + entry.category}>{entry.kind}</span>
         <span>·</span>
         <span>{entry.dates}</span>
@@ -124,7 +124,7 @@ const media = projectMedia[entry.id];
     type="button"
     autofocus
     data-close-dialog
-    class="detail-close absolute top-4 right-4 grid h-8 w-8 cursor-pointer place-items-center rounded-md bg-background text-foreground transition-colors hover:bg-accent"
+    class="detail-close absolute top-4 right-4 grid h-10 w-10 cursor-pointer place-items-center rounded-md bg-background text-foreground transition-colors hover:bg-accent"
     aria-label="Fermer les détails"
   >
     <Icon name="close" />

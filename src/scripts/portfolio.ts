@@ -7,3 +7,4 @@ import './journey';
 import './projects';
 import './preferences';
 import './gallery';
+import './contact';

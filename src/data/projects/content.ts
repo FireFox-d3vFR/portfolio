@@ -15,23 +15,26 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'orange',
-    title: 'Applications métier chez Orange',
+    title: 'AZOR · Application métier',
     category: 'Expérience professionnelle',
     period: '2023 à 2026',
     status: 'Alternance de trois ans',
     summary:
-      'De la refonte applicative à la mise en production : trois années au service des équipes métier de la Transmission.',
+      'Contribuer à AZOR, une application interne de suivi des activités de la Transmission : ordres de travaux, mise en service et automatisation des imports.',
     technologies: ['Symfony', 'Vue.js', 'Cloud Foundry', 'GitLab CI/CD'],
     context:
-      'Au sein du Département Transmission d’Orange France, contribution à une application interne destinée aux équipes opérationnelles et de production réseau.',
+      'Au sein du Département Transmission d’Orange France, j’ai contribué à la refonte et à l’évolution d’AZOR, une application interne utilisée par les équipes opérationnelles et de production réseau. Ce travail collectif relie développement Full Stack, intégration de données et livraison en production.',
     contributions: [
       'Participation à la refonte du socle Symfony et Vue.js, en conservant les besoins métier de l’application existante.',
       'Préparation des environnements Cloud Foundry, des services associés et des pipelines GitLab CI/CD, avec l’accompagnement de l’équipe.',
-      'Développement frontend et backend d’un module de suivi des ordres de travaux : import quotidien, recherche, filtres, prise en charge et exports.',
+      'Développement frontend et backend de TableauOT : import quotidien des ordres de travaux, recherche, filtres, prise en charge et exports.',
+      'Contribution à l’intégration du premier lot de Suivi Mise en Service et à la cohérence de son interface pour centraliser l’avancement des dossiers.',
+      'Travail sur le parcours de nommage des ports WDM : comparaison des anciens noms et des noms proposés, contrôles d’éligibilité et étape de validation DRY-RUN avant le renommage.',
+      'Mise en place d’une interface de suivi des imports planifiés : horaires, dernières exécutions, résultats, états et accès aux journaux et à la relance manuelle.',
       'Améliorations à partir des retours utilisateurs, fiabilisation du rafraîchissement et contribution à la supervision.',
     ],
     takeaway:
-      'Cette expérience m’a permis de passer du frontend au développement Full Stack et de participer à la mise en production. Les supports internes ne sont pas publics.',
+      'AZOR m’a permis de passer du frontend au développement Full Stack, de participer à la mise en production et de faire évoluer des fonctionnalités à partir des retours métier. Les captures présentées sont expurgées des données sensibles ; l’application et son code restent internes.',
   },
   {
     id: 'anthlabs',

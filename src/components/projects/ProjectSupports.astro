@@ -44,6 +44,9 @@ const { media, id } = Astro.props;
         {media.images[0].caption}
       </figcaption>
     </figure>
+    <button type="button" data-enlarge-image class="support-enlarge mt-3">
+      Agrandir l’image <Icon name="arrow" />
+    </button>
     {media.images.length > 1 && (
       <div class="support-thumbnails mt-3" role="group" aria-label="Choisir une image">
         {media.images.map((image, i) => (

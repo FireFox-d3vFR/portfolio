@@ -26,6 +26,14 @@ export const projectLogoNames: Record<string, ProjectLogoSettings> = {
     listPadding: 8,
     mobilePadding: 4,
   },
+  azor: {
+    filename: 'azor',
+    initials: 'AZ',
+    gridWidth: 250,
+    gridHeight: 110,
+    listPadding: 1,
+    mobilePadding: 1,
+  },
   orange: {
     filename: 'orange',
     initials: 'OR',

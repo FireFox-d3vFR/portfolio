@@ -51,7 +51,7 @@ function documentedProject(
 
 export const ENTRIES: Entry[] = [
   {
-    relatedEntry: { id: 'orange-project', label: 'Voir les réalisations chez Orange' },
+    relatedEntry: { id: 'orange-project', label: 'Découvrir le projet AZOR' },
     id: 'orange',
     category: 'experience',
     title: 'Développeur Web & Applicatif',
@@ -250,9 +250,9 @@ export const ENTRIES: Entry[] = [
 // Distinguer le projet professionnel de l’alternance, sans ajouter d’événement au parcours.
 export const ORANGE_PROJECT = documentedProject({
   id: 'orange-project',
-  logoId: 'orange',
+  logoId: 'azor',
   category: 'experience',
-  title: 'Applications métier · Orange',
+  title: 'AZOR · Application métier',
   org: 'Orange',
   kind: 'Projet professionnel',
   location: 'Lyon (69)',

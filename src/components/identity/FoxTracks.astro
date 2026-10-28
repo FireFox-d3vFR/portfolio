@@ -1,21 +1,15 @@
 ---
-import { Image } from 'astro:assets';
+import { getImage } from 'astro:assets';
 import tracks from '../../assets/images/fox-pawprints.png';
 interface Props {
   class?: string;
 }
 const { class: className = '' } = Astro.props;
+const mask = await getImage({ src: tracks, width: 540, format: 'webp', quality: 90 });
 ---
 
-<Image
-  src={tracks}
-  alt=""
+<span
   aria-hidden="true"
-  width={360}
-  widths={[180, 360, 540]}
-  sizes="(max-width: 767px) 120px, 320px"
-  format="webp"
-  quality={90}
-  loading="lazy"
-  class={'fox-tracks pointer-events-none select-none object-contain ' + className}
-/>
+  class={'fox-tracks pointer-events-none select-none ' + className}
+  style={{ '--fox-tracks-mask': `url("${mask.src}")` }}
+></span>
